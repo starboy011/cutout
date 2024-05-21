@@ -6,6 +6,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import ScissorAnimation from "./components/SplashScreen/ScissorAnimation";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
+import { Provider as PaperProvider } from "react-native-paper";
 
 const Stack = createStackNavigator();
 
@@ -28,23 +29,25 @@ export default function App() {
   }, [showSplash]);
 
   return (
-    <NavigationContainer>
-      <SafeAreaView style={styles.container}>
-        {showSplash ? (
-          <ScissorAnimation />
-        ) : navigateToLogin ? (
-          <Login />
-        ) : (
-          <Stack.Navigator
-            initialRouteName="Home"
-            screenOptions={{ headerShown: false }}
-          >
-            <Stack.Screen name="Home" component={Home} />
-          </Stack.Navigator>
-        )}
-        <StatusBar style="auto" />
-      </SafeAreaView>
-    </NavigationContainer>
+    <PaperProvider>
+      <NavigationContainer>
+        <SafeAreaView style={styles.container}>
+          {showSplash ? (
+            <ScissorAnimation />
+          ) : navigateToLogin ? (
+            <Login />
+          ) : (
+            <Stack.Navigator
+              initialRouteName="Home"
+              screenOptions={{ headerShown: false }}
+            >
+              <Stack.Screen name="Home" component={Home} />
+            </Stack.Navigator>
+          )}
+          <StatusBar style="auto" />
+        </SafeAreaView>
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
 
