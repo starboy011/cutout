@@ -55,7 +55,7 @@ const Login = () => {
           </Text>
           <Text
             variant="titleSmall"
-            style={{ fontWeight: "bold", fontFamily: "serif" }}
+            style={{ fontWeight: 100, fontFamily: "serif" }}
           >
             haircut appointment.
           </Text>
