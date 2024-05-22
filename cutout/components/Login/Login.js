@@ -67,7 +67,7 @@ const Login = () => {
       <View style={styles.image}>
         <Animated.View style={{ flex: 1, opacity: fadeAnim }}>
           <ImageBackground
-            source={require("./haircut.jpeg")}
+            source={require("./haircut.png")}
             style={styles.backgroundImage}
           />
         </Animated.View>
@@ -89,7 +89,7 @@ const Login = () => {
 export default Login;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "white" },
+  container: { flex: 1, backgroundColor: "#DFF5FF" },
   titlecontainer: {
     width: "100%",
     height: "15%",
