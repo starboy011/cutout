@@ -11,6 +11,8 @@ import { Text, Button } from "react-native-paper";
 
 const Login = () => {
   const slideAnim = useRef(new Animated.Value(300)).current;
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
   useEffect(() => {
     Animated.spring(slideAnim, {
       toValue: 0,
@@ -18,7 +20,21 @@ const Login = () => {
       tension: 100,
       useNativeDriver: true,
     }).start();
-  }, [slideAnim]);
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 2000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(fadeAnim, {
+          toValue: 0,
+          duration: 2000,
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
+  }, [slideAnim, fadeAnim]);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titlecontainer}>
@@ -46,10 +62,12 @@ const Login = () => {
         </Animated.View>
       </View>
       <View style={styles.image}>
-        <ImageBackground
-          source={require("./haircut.jpeg")}
-          style={styles.backgroundImage}
-        />
+        <Animated.View style={{ flex: 1, opacity: fadeAnim }}>
+          <ImageBackground
+            source={require("./haircut.jpeg")}
+            style={styles.backgroundImage}
+          />
+        </Animated.View>
       </View>
       <View style={styles.field}>
         <TouchableOpacity style={{ width: "90%" }}>
