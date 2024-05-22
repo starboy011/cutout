@@ -1,4 +1,10 @@
-import { SafeAreaView, StyleSheet, View, Animated } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Animated,
+  ImageBackground,
+} from "react-native";
 import React, { useRef, useEffect } from "react";
 import { Text } from "react-native-paper";
 
@@ -22,11 +28,28 @@ const Login = () => {
             variant="displayMedium"
             style={{ fontWeight: "bold", fontFamily: "serif" }}
           >
-            BOOK CUTS
+            BookCuts
+          </Text>
+          <Text
+            variant="headlineSmall"
+            style={{ fontWeight: 300, fontFamily: "serif" }}
+          >
+            Get your perfect
+          </Text>
+          <Text
+            variant="titleSmall"
+            style={{ fontWeight: "bold", fontFamily: "serif" }}
+          >
+            haircut appointment.
           </Text>
         </Animated.View>
       </View>
-      <View style={styles.image}></View>
+      <View style={styles.image}>
+        <ImageBackground
+          source={require("./haircut.jpeg")}
+          style={styles.backgroundImage}
+        />
+      </View>
       <View style={styles.field}></View>
     </SafeAreaView>
   );
@@ -39,7 +62,7 @@ const styles = StyleSheet.create({
   titlecontainer: {
     width: "100%",
     height: "15%",
-    marginTop: 40,
+    marginTop: 50,
   },
   title: {
     display: "flex",
@@ -59,5 +82,10 @@ const styles = StyleSheet.create({
     // backgroundColor: "blue",
     height: "30%",
     width: "100%",
+  },
+  backgroundImage: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
   },
 });
