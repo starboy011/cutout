@@ -10,15 +10,16 @@ import {
   ScrollView,
 } from "react-native";
 import { Text, TextInput, Button } from "react-native-paper";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 const { width, height } = Dimensions.get("window");
 
 const isTablet = width >= 600;
 
 const LoginScreen1 = () => {
-  const [text, setText] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [text, setText] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const slideAnim = useRef(new Animated.Value(1000)).current;
   useEffect(() => {
     Animated.spring(slideAnim, {
@@ -80,6 +81,7 @@ const LoginScreen1 = () => {
                   label="Email"
                   value={text}
                   onChangeText={(text) => setText(text)}
+                  right={<TextInput.Icon icon="email" />}
                   style={{
                     width: "90%",
                     backgroundColor: "#8576FF",
@@ -93,7 +95,13 @@ const LoginScreen1 = () => {
                   label="Password"
                   value={password}
                   onChangeText={(password) => setPassword(password)}
-                  secureTextEntry
+                  secureTextEntry={showPassword}
+                  right={
+                    <TextInput.Icon
+                      icon="eye"
+                      onPress={() => setShowPassword(!showPassword)}
+                    />
+                  }
                   style={{
                     width: "90%",
                     backgroundColor: "#8576FF",
