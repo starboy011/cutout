@@ -20,7 +20,7 @@ const isTablet = width >= 600;
 const LoginScreen1 = () => {
   const [text, setText] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(true);
   const slideAnim = useRef(new Animated.Value(1000)).current;
   useEffect(() => {
     Animated.spring(slideAnim, {
