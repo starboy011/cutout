@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React from "react";
-import { Button } from "react-native-paper";
+import { Button, Text } from "react-native-paper";
 const LoginFotter = () => {
   return (
     <View style={styles.container}>
@@ -11,12 +11,29 @@ const LoginFotter = () => {
         textColor="black"
         style={{
           width: "90%",
-          marginTop: 10,
+          marginTop: 50,
           backgroundColor: "white",
           opacity: 1,
         }}
       >
         Sign in with Google
+      </Button>
+      <Text variant="labelSmall" style={{ marginTop: 25 }}>
+        OR
+      </Text>
+      <Button
+        icon="account-plus"
+        mode="contained"
+        onPress={() => console.log("Pressed")}
+        textColor="black"
+        style={{
+          width: "90%",
+          marginTop: 25,
+          backgroundColor: "white",
+          opacity: 1,
+        }}
+      >
+        Sign up
       </Button>
     </View>
   );
