@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { Text, TextInput, Button } from "react-native-paper";
 import React, { useRef, useEffect, useState } from "react";
+import LoginFotter from "./LoginFotter";
 
 const { width, height } = Dimensions.get("window");
 
@@ -138,6 +139,23 @@ const LoginScreen1 = () => {
                   Login
                 </Button>
               </Animated.View>
+              <Animated.View
+                style={[
+                  styles.fotterContainer,
+                  {
+                    transform: [
+                      {
+                        translateY: slideAnim.interpolate({
+                          inputRange: [0, 1000],
+                          outputRange: [0, -height], // Adjust these values as needed
+                        }),
+                      },
+                    ],
+                  },
+                ]}
+              >
+                <LoginFotter />
+              </Animated.View>
             </View>
           </View>
         </ScrollView>
@@ -214,5 +232,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 50,
+  },
+  fotterContainer: {
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
