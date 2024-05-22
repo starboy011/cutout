@@ -76,7 +76,22 @@ const LoginScreen1 = () => {
                   Login
                 </Text>
               </Animated.View>
-              <View style={styles.inputcontainer}>
+              <Animated.View
+                style={[
+                  styles.inputcontainer,
+                  {
+                    transform: [
+                      { translateY: slideAnim },
+                      {
+                        rotate: slideAnim.interpolate({
+                          inputRange: [0, 750],
+                          outputRange: ["360deg", "0deg"],
+                        }),
+                      },
+                    ],
+                  },
+                ]}
+              >
                 <TextInput
                   label="Email"
                   value={text}
@@ -122,7 +137,7 @@ const LoginScreen1 = () => {
                 >
                   Login
                 </Button>
-              </View>
+              </Animated.View>
             </View>
           </View>
         </ScrollView>
