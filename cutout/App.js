@@ -30,23 +30,9 @@ export default function App() {
 
   return (
     <PaperProvider>
-      <NavigationContainer>
-        <SafeAreaView style={styles.container}>
-          {showSplash ? (
-            <ScissorAnimation />
-          ) : navigateToLogin ? (
-            <Login />
-          ) : (
-            <Stack.Navigator
-              initialRouteName="Home"
-              screenOptions={{ headerShown: false }}
-            >
-              <Stack.Screen name="Home" component={Home} />
-            </Stack.Navigator>
-          )}
-          <StatusBar style="auto" />
-        </SafeAreaView>
-      </NavigationContainer>
+      <SafeAreaView style={styles.container}>
+        {showSplash ? <ScissorAnimation /> : <Login />}
+      </SafeAreaView>
     </PaperProvider>
   );
 }
@@ -54,8 +40,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white",
   },
 });

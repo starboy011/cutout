@@ -1,12 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 const Login = () => {
-  return <View style={styles.container}></View>;
+  return <SafeAreaView style={styles.container}></SafeAreaView>;
 };
 
 export default Login;
 
 const styles = StyleSheet.create({
-  container: { height: "100%", width: "100%" },
+  container: { flex: 1 },
 });
