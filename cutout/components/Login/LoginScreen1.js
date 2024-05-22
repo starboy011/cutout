@@ -1,28 +1,124 @@
 import {
   SafeAreaView,
   StyleSheet,
-  Text,
   Platform,
   StatusBar,
+  Animated,
   View,
   Dimensions,
+  KeyboardAvoidingView,
+  ScrollView,
 } from "react-native";
-import React from "react";
+import { Text, TextInput, Button } from "react-native-paper";
+import React, { useRef, useEffect } from "react";
 
 const { width, height } = Dimensions.get("window");
 
 const isTablet = width >= 600;
 
 const LoginScreen1 = () => {
+  const [text, setText] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const slideAnim = useRef(new Animated.Value(1000)).current;
+  useEffect(() => {
+    Animated.spring(slideAnim, {
+      toValue: 0,
+      friction: 5,
+      tension: 100,
+      useNativeDriver: true,
+    }).start();
+  }, [slideAnim]);
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <View style={styles.boxcontainer}>
-          <View style={styles.box}></View>
-          <View style={styles.box1}></View>
-          <View style={styles.box2}></View>
-        </View>
-      </View>
+      <KeyboardAvoidingView
+        style={styles.container}
+        behavior={Platform.OS === "ios" ? "padding" : null}
+        keyboardVerticalOffset={
+          Platform.OS === "ios" ? 0 : -Dimensions.get("window").height * 0.2
+        }
+      >
+        <ScrollView keyboardShouldPersistTaps="handled">
+          <View style={styles.container}>
+            <View style={styles.boxcontainer}>
+              <Animated.View
+                style={[styles.box, { transform: [{ translateX: slideAnim }] }]}
+              ></Animated.View>
+              <Animated.View
+                style={[
+                  styles.box1,
+                  { transform: [{ translateY: slideAnim }] },
+                ]}
+              ></Animated.View>
+              <Animated.View
+                style={[
+                  styles.box2,
+                  { transform: [{ translateY: slideAnim }] },
+                ]}
+              ></Animated.View>
+            </View>
+            <View style={styles.formcontainer}>
+              <Animated.View
+                style={[
+                  styles.title,
+                  { transform: [{ translateY: slideAnim }] },
+                ]}
+              >
+                <Text
+                  variant="displayLarge"
+                  style={{
+                    color: "white",
+                    fontFamily: "serif",
+                    marginLeft: 15,
+                    marginTop: -30,
+                  }}
+                >
+                  Login
+                </Text>
+              </Animated.View>
+              <View style={styles.inputcontainer}>
+                <TextInput
+                  label="Email"
+                  value={text}
+                  onChangeText={(text) => setText(text)}
+                  style={{
+                    width: "90%",
+                    backgroundColor: "#8576FF",
+                    opacity: 0.5,
+                    marginBottom: 10,
+                    marginTop: 50,
+                    justifyContent: "center",
+                  }}
+                />
+                <TextInput
+                  label="Password"
+                  value={password}
+                  onChangeText={(password) => setPassword(password)}
+                  secureTextEntry
+                  style={{
+                    width: "90%",
+                    backgroundColor: "#8576FF",
+                    opacity: 0.5,
+                    justifyContent: "center",
+                    marginTop: 20,
+                  }}
+                />
+                <Button
+                  icon="login"
+                  mode="contained"
+                  onPress={() => console.log("Pressed")}
+                  style={{
+                    width: "90%",
+                    justifyContent: "center",
+                    marginTop: 20,
+                  }}
+                >
+                  Login
+                </Button>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
@@ -61,6 +157,7 @@ const styles = StyleSheet.create({
     borderRadius: 1000,
     marginTop: isTablet ? -500 : -430,
     marginLeft: width * (isTablet ? 0.5 : 0.55),
+    opacity: 0.5,
   },
   box2: {
     backgroundColor: "#67C6E3",
@@ -69,6 +166,30 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 1000,
     marginTop: isTablet ? -250 : -300,
-    marginLeft: width * (isTablet ? -0.2 : 0.2),
+    marginLeft: width * (isTablet ? -0.2 : -0.2),
+    opacity: 0.8,
+  },
+  formcontainer: {
+    width: width,
+  },
+  title: {
+    width: width,
+  },
+  inputcontainer: {
+    flex: 1,
+    width: width,
+    height: 300,
+    justifyContent: "center",
+    alignItems: "center",
+    // backgroundColor: "red",
+  },
+  username: {
+    backgroundColor: "#8576FF",
+    opacity: 0.5,
+    width: width * 0.9,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 50,
   },
 });
