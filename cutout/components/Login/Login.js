@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from "react";
 import {
   SafeAreaView,
   StyleSheet,
@@ -6,10 +7,11 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
-import React, { useRef, useEffect } from "react";
 import { Text, Button } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
+  const navigation = useNavigation();
   const slideAnim = useRef(new Animated.Value(300)).current;
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
@@ -35,6 +37,7 @@ const Login = () => {
       ])
     ).start();
   }, [slideAnim, fadeAnim]);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titlecontainer}>
@@ -70,7 +73,10 @@ const Login = () => {
         </Animated.View>
       </View>
       <View style={styles.field}>
-        <TouchableOpacity style={{ width: "90%" }}>
+        <TouchableOpacity
+          style={{ width: "90%" }}
+          onPress={() => navigation.navigate("LoginScreen1")}
+        >
           <Button icon="book" mode="contained" buttonColor="blue">
             Book Now
           </Button>
@@ -83,9 +89,8 @@ const Login = () => {
 export default Login;
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: { flex: 1, backgroundColor: "white" },
   titlecontainer: {
-    // backgroundColor: "red",
     width: "100%",
     height: "15%",
     marginTop: "15%",
@@ -100,12 +105,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   image: {
-    // backgroundColor: "green",
     width: "100%",
     height: "55%",
   },
   field: {
-    // backgroundColor: "blue",
     justifyContent: "center",
     alignItems: "center",
     height: "10%",
