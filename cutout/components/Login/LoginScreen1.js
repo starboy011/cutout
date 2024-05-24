@@ -22,6 +22,7 @@ const LoginScreen1 = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(true);
   const slideAnim = useRef(new Animated.Value(1000)).current;
+
   useEffect(() => {
     Animated.spring(slideAnim, {
       toValue: 0,
@@ -30,6 +31,7 @@ const LoginScreen1 = () => {
       useNativeDriver: true,
     }).start();
   }, [slideAnim]);
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <KeyboardAvoidingView
@@ -44,19 +46,19 @@ const LoginScreen1 = () => {
             <View style={styles.boxcontainer}>
               <Animated.View
                 style={[styles.box, { transform: [{ translateX: slideAnim }] }]}
-              ></Animated.View>
+              />
               <Animated.View
                 style={[
                   styles.box1,
                   { transform: [{ translateY: slideAnim }] },
                 ]}
-              ></Animated.View>
+              />
               <Animated.View
                 style={[
                   styles.box2,
                   { transform: [{ translateY: slideAnim }] },
                 ]}
-              ></Animated.View>
+              />
             </View>
             <View style={styles.formcontainer}>
               <Animated.View
@@ -96,7 +98,7 @@ const LoginScreen1 = () => {
                 <TextInput
                   label="Email"
                   value={text}
-                  onChangeText={(text) => setText(text)}
+                  onChangeText={setText}
                   right={<TextInput.Icon icon="email" />}
                   style={{
                     width: "90%",
@@ -110,7 +112,7 @@ const LoginScreen1 = () => {
                 <TextInput
                   label="Password"
                   value={password}
-                  onChangeText={(password) => setPassword(password)}
+                  onChangeText={setPassword}
                   secureTextEntry={showPassword}
                   right={
                     <TextInput.Icon
@@ -169,7 +171,6 @@ export default LoginScreen1;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   container: {
     flex: 1,
@@ -179,7 +180,6 @@ const styles = StyleSheet.create({
   boxcontainer: {
     width: width,
     height: height * 0.2,
-    // backgroundColor: "red",
   },
   box: {
     backgroundColor: "#1C1678",
@@ -222,7 +222,6 @@ const styles = StyleSheet.create({
     height: 300,
     justifyContent: "center",
     alignItems: "center",
-    // backgroundColor: "red",
   },
   username: {
     backgroundColor: "#8576FF",
