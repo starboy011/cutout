@@ -9,7 +9,6 @@ import { Provider as PaperProvider } from "react-native-paper";
 import LoginScreen1 from "./components/Login/LoginScreen1";
 
 const Stack = createStackNavigator();
-
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
 
