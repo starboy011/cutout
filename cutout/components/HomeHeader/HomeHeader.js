@@ -11,12 +11,14 @@ const { width, height } = Dimensions.get("window");
 
 import headerBackground from "./headerBackground.jpeg";
 import SideDrawer from "../SideDrawer/SideDrawer";
+import Profile from "../Profile/Profile";
 
 const HomeHeader = () => {
   return (
     <ImageBackground source={headerBackground} style={styles.container}>
       <View style={styles.topbar}>
         <SideDrawer />
+        <Profile />
       </View>
     </ImageBackground>
   );
@@ -34,6 +36,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   topbar: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
     width: width,
     height: 50,
   },
