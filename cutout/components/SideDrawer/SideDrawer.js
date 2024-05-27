@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React, { useState } from "react";
 import { Avatar } from "react-native-paper";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const SideDrawer = () => {
   const [active, setActive] = useState(false);
+
   return (
     <View style={styles.container}>
       {!active ? (
