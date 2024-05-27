@@ -5,9 +5,7 @@ import React from "react";
 const Home = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <Text>Home</Text>
-      </View>
+      <View style={styles.container}></View>
     </SafeAreaView>
   );
 };
@@ -17,7 +15,7 @@ export default Home;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "white", // Ensure a background color for SafeAreaView
+    backgroundColor: "#f8f9fa",
   },
   container: {
     flex: 1,
