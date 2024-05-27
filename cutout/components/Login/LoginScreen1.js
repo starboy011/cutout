@@ -2,7 +2,6 @@ import {
   SafeAreaView,
   StyleSheet,
   Platform,
-  StatusBar,
   Animated,
   View,
   Dimensions,
@@ -17,11 +16,20 @@ const { width, height } = Dimensions.get("window");
 
 const isTablet = width >= 600;
 
-const LoginScreen1 = () => {
+const LoginScreen1 = ({ navigation }) => {
   const [text, setText] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(true);
   const slideAnim = useRef(new Animated.Value(1000)).current;
+
+  const handleLogin = () => {
+    if (text === "" && password === "") {
+      navigation.navigate("Home");
+    } else {
+      console.log(text, password);
+      console.log("Wrong username or password");
+    }
+  };
 
   useEffect(() => {
     Animated.spring(slideAnim, {
@@ -131,7 +139,7 @@ const LoginScreen1 = () => {
                 <Button
                   icon="login"
                   mode="contained"
-                  onPress={() => console.log("Pressed")}
+                  onPress={handleLogin} // Correctly reference the handleLogin function
                   style={{
                     width: "90%",
                     justifyContent: "center",
