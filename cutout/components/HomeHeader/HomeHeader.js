@@ -10,13 +10,15 @@ import React from "react";
 const { width, height } = Dimensions.get("window");
 
 import headerBackground from "./headerBackground.jpeg";
+import SideDrawer from "../SideDrawer/SideDrawer";
 
 const HomeHeader = () => {
   return (
-    <ImageBackground
-      source={headerBackground}
-      style={styles.container}
-    ></ImageBackground>
+    <ImageBackground source={headerBackground} style={styles.container}>
+      <View style={styles.topbar}>
+        <SideDrawer />
+      </View>
+    </ImageBackground>
   );
 };
 
@@ -29,8 +31,10 @@ const styles = StyleSheet.create({
     borderTopEndRadius: 10,
     borderTopLeftRadius: 10,
     overflow: "hidden",
-    justifyContent: "center",
     alignItems: "center",
-    opacity: 0.8,
+  },
+  topbar: {
+    width: width,
+    height: 50,
   },
 });
