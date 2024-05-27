@@ -12,6 +12,7 @@ const { width, height } = Dimensions.get("window");
 import headerBackground from "./headerBackground.jpeg";
 import SideDrawer from "../SideDrawer/SideDrawer";
 import Profile from "../Profile/Profile";
+import HomeContent from "../HomeContent/HomeContent";
 
 const HomeHeader = () => {
   return (
@@ -19,6 +20,9 @@ const HomeHeader = () => {
       <View style={styles.topbar}>
         <SideDrawer />
         <Profile />
+      </View>
+      <View style={styles.content}>
+        <HomeContent />
       </View>
     </ImageBackground>
   );
@@ -41,5 +45,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     width: width,
     height: 50,
+  },
+  content: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: width,
+    height: "80%",
   },
 });
