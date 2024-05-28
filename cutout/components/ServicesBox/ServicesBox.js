@@ -25,11 +25,13 @@ const ServicesBox = (props) => {
       style={[styles.container, { transform: [{ translateX: slideAnim }] }]}
     >
       <TouchableOpacity>
-        <ImageBackground source={image} style={styles.circle}>
-          <View style={styles.title}>
-            <Text style={styles.titleStyle}>{title}</Text>
-          </View>
-        </ImageBackground>
+        <View style={styles.circle1}>
+          <ImageBackground source={image} style={styles.circle}>
+            <View style={styles.title}>
+              <Text style={styles.titleStyle}>{title}</Text>
+            </View>
+          </ImageBackground>
+        </View>
       </TouchableOpacity>
     </Animated.View>
   );
@@ -40,7 +42,7 @@ export default ServicesBox;
 const styles = StyleSheet.create({
   container: {
     width: 120,
-    height: 100,
+    height: 120,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -50,6 +52,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     overflow: "hidden",
     borderRadius: 20,
+  },
+  circle1: {
+    width: 103,
+    height: 104,
+    overflow: "hidden",
+    borderRadius: 20,
+    backgroundColor: "rgba(52, 58, 64, .3)",
   },
   title: {
     width: 100,
