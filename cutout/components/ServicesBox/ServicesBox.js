@@ -1,15 +1,18 @@
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import React from "react";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const ServicesBox = (props) => {
   const { title, image } = props;
   return (
     <View style={styles.container}>
-      <ImageBackground source={image} style={styles.circle}>
-        <View style={styles.title}>
-          <Text style={styles.titleStyle}>{title}</Text>
-        </View>
-      </ImageBackground>
+      <TouchableOpacity>
+        <ImageBackground source={image} style={styles.circle}>
+          <View style={styles.title}>
+            <Text style={styles.titleStyle}>{title}</Text>
+          </View>
+        </ImageBackground>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -36,6 +39,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#e9ecef",
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#f8f9fa",
   },
   titleStyle: {
     fontWeight: "bold",

@@ -10,7 +10,10 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <ScrollView stickyHeaderIndices={[1]}>
+        <ScrollView
+          stickyHeaderIndices={[1]}
+          showsVerticalScrollIndicator={false}
+        >
           <View style={styles.headerContainer}>
             <HomeHeader />
           </View>
