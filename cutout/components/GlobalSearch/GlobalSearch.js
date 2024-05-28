@@ -10,6 +10,7 @@ const GlobalSearch = () => {
       onChangeText={setSearchQuery}
       value={searchQuery}
       iconColor="#343a40"
+      height={10}
       style={{
         width: width * 0.9,
         backgroundColor: "#e9ecef",
