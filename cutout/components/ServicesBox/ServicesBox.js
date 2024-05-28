@@ -1,11 +1,29 @@
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
-import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  Animated,
+} from "react-native";
+import React, { useRef, useEffect } from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const ServicesBox = (props) => {
-  const { title, image } = props;
+  const { title, image, translate } = props;
+  const slideAnim = useRef(new Animated.Value(translate)).current;
+
+  useEffect(() => {
+    Animated.spring(slideAnim, {
+      toValue: 0,
+      friction: 5,
+      tension: 150,
+      useNativeDriver: true,
+    }).start();
+  }, [slideAnim]);
   return (
-    <View style={styles.container}>
+    <Animated.View
+      style={[styles.container, { transform: [{ translateX: slideAnim }] }]}
+    >
       <TouchableOpacity>
         <ImageBackground source={image} style={styles.circle}>
           <View style={styles.title}>
@@ -13,7 +31,7 @@ const ServicesBox = (props) => {
           </View>
         </ImageBackground>
       </TouchableOpacity>
-    </View>
+    </Animated.View>
   );
 };
 
@@ -29,7 +47,6 @@ const styles = StyleSheet.create({
   circle: {
     width: 100,
     height: 100,
-    borderRadius: 200,
     justifyContent: "center",
     overflow: "hidden",
   },
