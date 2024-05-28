@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     height: 100,
     justifyContent: "center",
     overflow: "hidden",
+    borderRadius: 20,
   },
   title: {
     width: 100,
