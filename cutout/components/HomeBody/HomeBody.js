@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f8f9fa",
   },
   globalSearchContainer: {
-    marginTop: 20,
+    marginTop: 25,
     width: width,
     justifyContent: "center",
     alignItems: "center",
