@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   circle1: {
-    width: 103,
-    height: 104,
+    width: 102,
+    height: 102,
     overflow: "hidden",
     borderRadius: 20,
     backgroundColor: "rgba(52, 58, 64, .3)",
