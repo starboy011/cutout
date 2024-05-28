@@ -1,12 +1,17 @@
 import { StyleSheet, Text, View, Dimensions } from "react-native";
 import React from "react";
 import GlobalSearch from "../GlobalSearch/GlobalSearch";
+import Services from "../Services/Services";
+import { ScrollView } from "react-native-gesture-handler";
 const { width, height } = Dimensions.get("window");
 const HomeBody = () => {
   return (
     <View style={styles.container}>
       <View style={styles.globalSearchContainer}>
         <GlobalSearch />
+      </View>
+      <View style={styles.servicesContainer}>
+        <Services />
       </View>
     </View>
   );
@@ -25,10 +30,12 @@ const styles = StyleSheet.create({
   globalSearchContainer: {
     marginTop: 20,
     width: width,
-    height: 80,
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
     justifyContent: "center",
     alignItems: "center",
+  },
+  servicesContainer: {
+    height: 120,
+    width: width,
+    justifyContent: "center",
   },
 });
