@@ -11,11 +11,15 @@ const Services = () => {
   return (
     <View style={styles.container}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <ServicesBox title="HAIRCUT" image={haircutimage} />
-        <ServicesBox title="TRIM" image={trimerimage} />
-        <ServicesBox title="SHAVE" image={shaveimage} />
-        <ServicesBox title="BEARD" image={beardimage} />
-        <ServicesBox title="HAIRCOLOR" image={haircolorimage} />
+        <ServicesBox title="HAIRCUT" image={haircutimage} translate={400} />
+        <ServicesBox title="TRIM" image={trimerimage} translate={600} />
+        <ServicesBox title="SHAVE" image={shaveimage} translate={800} />
+        <ServicesBox title="BEARD" image={beardimage} translate={1000} />
+        <ServicesBox
+          title="HAIRCOLOR"
+          image={haircolorimage}
+          translate={1200}
+        />
       </ScrollView>
     </View>
   );
