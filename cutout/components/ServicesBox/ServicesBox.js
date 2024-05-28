@@ -11,7 +11,6 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 const ServicesBox = (props) => {
   const { title, image, translate } = props;
   const slideAnim = useRef(new Animated.Value(translate)).current;
-  const fadeAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.spring(slideAnim, {
@@ -48,7 +47,6 @@ const styles = StyleSheet.create({
   circle: {
     width: 100,
     height: 100,
-    borderRadius: 200,
     justifyContent: "center",
     overflow: "hidden",
   },
