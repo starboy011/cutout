@@ -2,9 +2,9 @@ import { StyleSheet, Text, View, Dimensions, Animated } from "react-native";
 import React, { useState, useEffect, useRef } from "react";
 import { Drawer } from "react-native-paper";
 const { width, height } = Dimensions.get("window");
-const CustomeDrawer = () => {
+const ProfileDrawer = () => {
   const [active, setActive] = useState("");
-  const slideAnim = useRef(new Animated.Value(-300)).current;
+  const slideAnim = useRef(new Animated.Value(300)).current;
   useEffect(() => {
     Animated.spring(slideAnim, {
       toValue: 0,
@@ -15,7 +15,7 @@ const CustomeDrawer = () => {
   }, [slideAnim]);
   return (
     <Animated.View style={{ transform: [{ translateX: slideAnim }] }}>
-      <Drawer.Section title="Menu" style={styles.container}>
+      <Drawer.Section title="Profile" style={styles.container}>
         <Drawer.Item
           label="First Item"
           active={active === "first"}
@@ -31,7 +31,7 @@ const CustomeDrawer = () => {
   );
 };
 
-export default CustomeDrawer;
+export default ProfileDrawer;
 
 const styles = StyleSheet.create({
   container: {
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     height: height * 0.8,
     backgroundColor: "white",
     borderRadius: 10,
-    marginLeft: width * 0.02,
+    marginLeft: "24%",
+    marginRight: width * 0.02,
   },
 });
