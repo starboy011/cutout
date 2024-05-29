@@ -8,8 +8,8 @@ const CustomeDrawer = () => {
   useEffect(() => {
     Animated.spring(slideAnim, {
       toValue: 0,
-      friction: 5,
-      tension: 100,
+      friction: 8,
+      tension: 20,
       useNativeDriver: true,
     }).start();
   }, [slideAnim]);

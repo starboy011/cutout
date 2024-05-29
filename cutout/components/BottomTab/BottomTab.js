@@ -16,8 +16,7 @@ const BottomTab = () => {
           tabBarInactiveTintColor: "black",
           tabBarStyle: {
             backgroundColor: "white",
-            width: width * 0.95,
-            marginLeft: width * 0.025,
+            width: width * 0.98,
             marginBottom: 5,
             height: 50,
             borderRadius: 10,
@@ -55,5 +54,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
     flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
