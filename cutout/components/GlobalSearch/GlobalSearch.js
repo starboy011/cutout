@@ -13,7 +13,10 @@ const GlobalSearch = () => {
       height={10}
       style={{
         width: width * 0.9,
-        backgroundColor: "#e9ecef",
+        backgroundColor: "white",
+        borderWidth: 1,
+        borderColor: "#e9ecef",
+        borderRadius: 10,
       }}
     />
   );

@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     marginTop: -20,
-    backgroundColor: "#f8f9fa",
+    backgroundColor: "white",
   },
   globalSearchContainer: {
     marginTop: 25,
