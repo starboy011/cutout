@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Dimensions, Animated } from "react-native";
 import React, { useState, useEffect, useRef } from "react";
 import { Drawer } from "react-native-paper";
+import ProfileDrawerMenu from "../ProfileDrawerMenu/ProfileDrawerMenu";
 const { width, height } = Dimensions.get("window");
 const ProfileDrawer = () => {
   const [active, setActive] = useState("");
@@ -14,19 +15,15 @@ const ProfileDrawer = () => {
     }).start();
   }, [slideAnim]);
   return (
-    <Animated.View style={{ transform: [{ translateX: slideAnim }] }}>
-      <Drawer.Section title="Profile" style={styles.container}>
-        <Drawer.Item
-          label="First Item"
-          active={active === "first"}
-          onPress={() => setActive("first")}
-        />
-        <Drawer.Item
-          label="Second Item"
-          active={active === "second"}
-          onPress={() => setActive("second")}
-        />
-      </Drawer.Section>
+    <Animated.View
+      style={[styles.container, { transform: [{ translateX: slideAnim }] }]}
+    >
+      <View style={styles.profilePhotoContainer}>
+        <View style={styles.profilePhoto}></View>
+      </View>
+      <View style={styles.ProfileDrawerMenuContainer}>
+        <ProfileDrawerMenu />
+      </View>
     </Animated.View>
   );
 };
@@ -41,5 +38,21 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginLeft: "24%",
     marginRight: width * 0.02,
+  },
+  profilePhotoContainer: {
+    width: "100%",
+    height: 150,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  profilePhoto: {
+    height: 100,
+    width: 100,
+    borderWidth: 1,
+    borderRadius: 50,
+  },
+  ProfileDrawerMenuContainer: {
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
