@@ -24,7 +24,7 @@ const LoginScreen1 = ({ navigation }) => {
 
   const handleLogin = () => {
     if (text === "" && password === "") {
-      navigation.navigate("Home");
+      navigation.navigate("BottomTab");
     } else {
       console.log(text, password);
       console.log("Wrong username or password");
