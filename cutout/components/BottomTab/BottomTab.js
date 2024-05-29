@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, Dimensions } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import Home from "../Home/Home";
 import Offers from "../Offers/Offers";
 const Tab = createBottomTabNavigator();
@@ -17,11 +17,11 @@ const BottomTab = () => {
           let iconName;
 
           if (route.name === "Home") {
-            iconName = focused ? "home" : "home-outline";
+            iconName = focused ? "home" : "home";
           } else if (route.name === "Offers") {
-            iconName = focused ? "person" : "person-outline";
+            iconName = focused ? "local-offer" : "local-offer";
           }
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return <MaterialIcons name={iconName} size={size} color={color} />;
         },
       })}
     >
