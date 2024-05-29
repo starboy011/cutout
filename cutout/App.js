@@ -1,3 +1,4 @@
+import "react-native-gesture-handler";
 import React, { useState, useEffect } from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
@@ -9,6 +10,7 @@ import { Provider as PaperProvider } from "react-native-paper";
 import LoginScreen1 from "./components/Login/LoginScreen1";
 import { Ionicons } from "@expo/vector-icons";
 import BottomTab from "./components/BottomTab/BottomTab";
+
 const Stack = createStackNavigator();
 
 export default function App() {
