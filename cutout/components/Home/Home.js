@@ -4,6 +4,7 @@ import React from "react";
 import HomeHeader from "../HomeHeader/HomeHeader";
 import { ScrollView } from "react-native-gesture-handler";
 import HomeBody from "../HomeBody/HomeBody";
+import BarberShops from "../BarberShops/BarberShops";
 
 const { width, height } = Dimensions.get("window");
 const Home = () => {
@@ -19,6 +20,9 @@ const Home = () => {
           </View>
           <View style={styles.homeBodyContainer}>
             <HomeBody />
+          </View>
+          <View style={styles.barberShopsContainer}>
+            <BarberShops />
           </View>
         </ScrollView>
       </View>
@@ -41,6 +45,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   homeBodyContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  barberShopsContainer: {
     justifyContent: "center",
     alignItems: "center",
   },

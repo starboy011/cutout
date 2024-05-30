@@ -3,6 +3,7 @@ import React from "react";
 import GlobalSearch from "../GlobalSearch/GlobalSearch";
 import Services from "../Services/Services";
 import { ScrollView } from "react-native-gesture-handler";
+import BarberShops from "../BarberShops/BarberShops";
 const { width, height } = Dimensions.get("window");
 const HomeBody = () => {
   return (
@@ -10,7 +11,6 @@ const HomeBody = () => {
       <View style={styles.servicesContainer}>
         <Services />
       </View>
-      <View style={styles.barberShopsContainer}></View>
     </View>
   );
 };
@@ -27,19 +27,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  globalSearchContainer: {
-    marginTop: 25,
-    width: width,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   servicesContainer: {
     height: 150,
     width: width,
     justifyContent: "center",
   },
   barberShopsContainer: {
-    backgroundColor: "green",
     justifyContent: "center",
     alignItems: "center",
     width: width,
