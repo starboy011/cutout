@@ -7,9 +7,9 @@ const { width, height } = Dimensions.get("window");
 const HomeBody = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.globalSearchContainer}>
+      {/* <View style={styles.globalSearchContainer}>
         <GlobalSearch />
-      </View>
+      </View> */}
       <View style={styles.servicesContainer}>
         <Services />
       </View>
@@ -22,8 +22,8 @@ export default HomeBody;
 const styles = StyleSheet.create({
   container: {
     width: width * 0.98,
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 30,
     marginTop: -20,
     backgroundColor: "white",
   },
