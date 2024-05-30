@@ -31,7 +31,6 @@ export default HomeHeader;
 
 const styles = StyleSheet.create({
   container: {
-    // marginRight: width * 0.01,
     width: width * 0.97,
     height: 200,
     borderTopRightRadius: 10,
