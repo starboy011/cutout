@@ -6,7 +6,6 @@ import {
   ImageBackground,
 } from "react-native";
 import React from "react";
-import { TouchableOpacity } from "react-native-gesture-handler";
 const { width, height } = Dimensions.get("window");
 const CardTile = ({ image }) => {
   return (
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     width: width * 0.96,
-    height: 300,
+    height: 350,
     borderRadius: 10,
     borderColor: "#ced4da",
   },
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     width: width * 0.9,
-    height: 85,
+    height: 130,
     borderColor: "grey",
     borderRadius: 10,
     marginBottom: 5,

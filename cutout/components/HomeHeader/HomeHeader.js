@@ -13,11 +13,13 @@ import headerBackground from "./headerBackground.jpeg";
 import SideDrawer from "../SideDrawer/SideDrawer";
 import Profile from "../Profile/Profile";
 import HomeContent from "../HomeContent/HomeContent";
+import Title from "../Title/Title";
 const HomeHeader = () => {
   return (
     <ImageBackground source={headerBackground} style={styles.container}>
       <View style={styles.topbar}>
         <SideDrawer />
+        <Title />
         <Profile />
       </View>
       <View style={styles.content}>
@@ -42,6 +44,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     width: width,
     height: 50,
   },
