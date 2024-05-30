@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 10,
     marginLeft: "24%",
-    marginRight: width * 0.02,
   },
   profilePhotoContainer: {
     width: "100%",
