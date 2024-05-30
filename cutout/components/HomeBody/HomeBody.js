@@ -21,11 +21,12 @@ export default HomeBody;
 
 const styles = StyleSheet.create({
   container: {
-    width: width * 0.98,
+    width: width * 0.97,
     borderTopLeftRadius: 20,
-    borderTopRightRadius: 25,
+    borderTopRightRadius: 20,
     marginTop: -20,
     backgroundColor: "white",
+    // overflow: "hidden",
   },
   globalSearchContainer: {
     marginTop: 25,

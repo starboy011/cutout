@@ -13,7 +13,6 @@ import headerBackground from "./headerBackground.jpeg";
 import SideDrawer from "../SideDrawer/SideDrawer";
 import Profile from "../Profile/Profile";
 import HomeContent from "../HomeContent/HomeContent";
-
 const HomeHeader = () => {
   return (
     <ImageBackground source={headerBackground} style={styles.container}>
@@ -32,7 +31,8 @@ export default HomeHeader;
 
 const styles = StyleSheet.create({
   container: {
-    width: width * 0.98,
+    // marginRight: width * 0.01,
+    width: width * 0.97,
     height: 200,
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,

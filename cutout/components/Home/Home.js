@@ -37,12 +37,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerContainer: {
-    width: width,
     justifyContent: "center",
     alignItems: "center",
   },
   homeBodyContainer: {
-    width: width,
     justifyContent: "center",
     alignItems: "center",
   },
