@@ -7,12 +7,10 @@ const { width, height } = Dimensions.get("window");
 const HomeBody = () => {
   return (
     <View style={styles.container}>
-      {/* <View style={styles.globalSearchContainer}>
-        <GlobalSearch />
-      </View> */}
       <View style={styles.servicesContainer}>
         <Services />
       </View>
+      <View style={styles.barberShopsContainer}></View>
     </View>
   );
 };
@@ -26,7 +24,8 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     marginTop: -20,
     backgroundColor: "white",
-    // overflow: "hidden",
+    justifyContent: "center",
+    alignItems: "center",
   },
   globalSearchContainer: {
     marginTop: 25,
@@ -38,5 +37,11 @@ const styles = StyleSheet.create({
     height: 150,
     width: width,
     justifyContent: "center",
+  },
+  barberShopsContainer: {
+    backgroundColor: "green",
+    justifyContent: "center",
+    alignItems: "center",
+    width: width,
   },
 });
