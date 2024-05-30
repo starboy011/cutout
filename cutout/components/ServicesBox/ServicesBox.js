@@ -41,27 +41,27 @@ export default ServicesBox;
 
 const styles = StyleSheet.create({
   container: {
-    width: 120,
-    height: 120,
+    width: 100,
+    height: 100,
     justifyContent: "center",
     alignItems: "center",
   },
   circle: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     justifyContent: "center",
     overflow: "hidden",
-    borderRadius: 20,
+    borderRadius: 50,
   },
   circle1: {
-    width: 102,
-    height: 102,
+    width: 82,
+    height: 82,
     overflow: "hidden",
-    borderRadius: 20,
+    borderRadius: 50,
     backgroundColor: "rgba(52, 58, 64, .3)",
   },
   title: {
-    width: 100,
+    width: "100%",
     height: 20,
     backgroundColor: "#e9ecef",
     alignItems: "center",
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   titleStyle: {
     fontWeight: "bold",
     fontFamily: "serif",
-    fontSize: 16,
+    fontSize: 13,
     marginTop: -1,
   },
 });
