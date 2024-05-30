@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
     width: width * 0.9,
     height: 200,
     borderColor: "#ced4da",
-    borderRadius: 10,
+    borderTopStartRadius: 5,
+    borderTopEndRadius: 5,
     overflow: "hidden",
   },
   detailsContainer: {
