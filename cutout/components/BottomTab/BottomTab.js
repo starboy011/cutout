@@ -1,7 +1,7 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Dimensions, View } from "react-native";
+import { StyleSheet, Dimensions, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import Home from "../Home/Home";
 import Offers from "../Offers/Offers";
 import Search from "../Search/Search";
