@@ -15,9 +15,9 @@ const BottomTab = () => {
         initialRouteName="Home"
         backBehavior="initinalRoute"
         screenOptions={({ route }) => ({
-          tabBarActiveTintColor: "red",
+          tabBarActiveTintColor: "#176B87",
           tabBarInactiveTintColor: "black",
-          tabBarActiveBackgroundColor: "#ffccd5",
+          tabBarActiveBackgroundColor: "#B4D4FF",
           tabBarShowLabel: false,
           tabBarItemStyle: {
             borderRadius: 20,
@@ -27,7 +27,7 @@ const BottomTab = () => {
             marginTop: 5,
           },
           tabBarStyle: {
-            backgroundColor: "#fff0f3",
+            backgroundColor: "#EEF5FF",
             width: width * 0.96,
             marginBottom: 5,
             height: 50,
