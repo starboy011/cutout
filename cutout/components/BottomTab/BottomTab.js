@@ -13,31 +13,41 @@ const BottomTab = () => {
     <View style={styles.container}>
       <Tab.Navigator
         initialRouteName="Home"
+        backBehavior="initinalRoute"
         screenOptions={({ route }) => ({
           tabBarActiveTintColor: "red",
           tabBarInactiveTintColor: "black",
+          tabBarActiveBackgroundColor: "#ffccd5",
           tabBarShowLabel: false,
+          tabBarItemStyle: {
+            borderRadius: 20,
+            marginLeft: 25,
+            marginRight: 25,
+            height: 40,
+            marginTop: 5,
+          },
           tabBarStyle: {
-            backgroundColor: "white",
-            width: width * 0.98,
+            backgroundColor: "#fff0f3",
+            width: width * 0.96,
             marginBottom: 5,
             height: 50,
             borderRadius: 10,
           },
-          tabBarIcon: ({ focused, color, size }) => {
+          tabBarIcon: ({ focused, color }) => {
             let iconName;
 
             if (route.name === "Home") {
-              iconName = focused ? "home" : "home";
+              iconName = "home";
             } else if (route.name === "Offers") {
-              iconName = focused ? "local-offer" : "local-offer";
+              iconName = "local-offer";
             } else if (route.name === "Search") {
-              iconName = focused ? "search" : "search";
+              iconName = "search";
             } else if (route.name === "Face") {
-              iconName = focused
-                ? "face-retouching-natural"
-                : "face-retouching-natural";
+              iconName = "face-retouching-natural";
             }
+
+            const size = focused ? 30 : 25;
+
             return <MaterialIcons name={iconName} size={size} color={color} />;
           },
         })}
