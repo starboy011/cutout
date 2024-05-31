@@ -4,10 +4,21 @@ import {
   View,
   Dimensions,
   ImageBackground,
+  ActivityIndicator,
 } from "react-native";
 import React from "react";
+import { useFonts, Satisfy_400Regular } from "@expo-google-fonts/satisfy";
+import Rating from "./Rating";
+
 const { width, height } = Dimensions.get("window");
 const CardTile = ({ image, ShopName }) => {
+  let [fontsLoaded] = useFonts({
+    Satisfy_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return <ActivityIndicator />;
+  }
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -17,6 +28,9 @@ const CardTile = ({ image, ShopName }) => {
       <View style={styles.detailsContainer}>
         <View style={styles.shopNameContainer}>
           <Text style={styles.shopNameText}>{ShopName}</Text>
+        </View>
+        <View style={styles.ratingContainer}>
+          <Rating rating={4.5} />
         </View>
       </View>
     </View>
@@ -47,17 +61,23 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     width: width * 0.9,
-    height: 130,
-    marginBottom: 5,
-    backgroundColor: "green",
+    height: 140,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   shopNameContainer: {
-    backgroundColor: "red",
+    justifyContent: "center",
     height: 40,
   },
   shopNameText: {
-    fontSize: 20,
-    fontFamily: "serif",
-    fontWeight: "bold",
+    fontSize: 25,
+    fontFamily: "Satisfy_400Regular",
+    marginLeft: 10,
+  },
+  ratingContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: 40,
+    // width: 100,
   },
 });
