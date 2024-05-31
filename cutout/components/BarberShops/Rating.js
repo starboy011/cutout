@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 import { Ionicons } from "@expo/vector-icons"; // Import Ionicons for star icons
-
+import { useFonts, Satisfy_400Regular } from "@expo-google-fonts/satisfy";
 const Rating = ({ rating }) => {
   const filledStars = Math.floor(rating); // Number of filled stars
   const hasHalfStar = rating - filledStars >= 0.5; // Check if there's a half-filled star
@@ -13,7 +13,7 @@ const Rating = ({ rating }) => {
         <Ionicons
           key={index}
           name="star"
-          size={14}
+          size={10}
           color="#ffc107" // Filled star color
           style={{ marginRight: 1 }}
         />
@@ -23,7 +23,7 @@ const Rating = ({ rating }) => {
         <Ionicons
           key={index}
           name="star-half"
-          size={14}
+          size={10}
           color="#ffc107" // Filled star color
           style={{ marginRight: 5 }}
         />
@@ -33,17 +33,52 @@ const Rating = ({ rating }) => {
         <Ionicons
           key={index}
           name="star-outline"
-          size={14}
-          color="#ffc107" // Empty star color
+          size={10}
+          color="#ffc107"
           style={{ marginRight: 5 }}
         />
       );
     }
   });
+  let [fontsLoaded] = useFonts({
+    Satisfy_400Regular,
+  });
 
+  if (!fontsLoaded) {
+    return <ActivityIndicator />;
+  }
   return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>{stars}</View>
+    <View style={{ flexDirection: "column" }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          width: 55,
+        }}
+      >
+        {stars}
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <View></View>
+        <View>
+          <Text style={styles.RatingTextStyle}>{rating}/5</Text>
+        </View>
+      </View>
+    </View>
   );
 };
 
 export default Rating;
+
+const styles = StyleSheet.create({
+  RatingTextStyle: {
+    fontSize: 12,
+    // fontWeight: "bold",
+    fontFamily: "Satisfy_400Regular",
+  },
+});
