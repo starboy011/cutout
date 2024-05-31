@@ -5,7 +5,7 @@ import Shop1Image from "./Shop1Image.jpeg";
 const BarberShops = () => {
   return (
     <View style={styles.container}>
-      <CardTile image={Shop1Image} />
+      <CardTile image={Shop1Image} ShopName={"Rishav"} />
       <CardTile image={Shop1Image} />
       <CardTile image={Shop1Image} />
       <CardTile image={Shop1Image} />

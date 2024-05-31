@@ -7,14 +7,18 @@ import {
 } from "react-native";
 import React from "react";
 const { width, height } = Dimensions.get("window");
-const CardTile = ({ image }) => {
+const CardTile = ({ image, ShopName }) => {
   return (
     <View style={styles.container}>
       <ImageBackground
         source={image}
         style={styles.imageContainer}
       ></ImageBackground>
-      <View style={styles.detailsContainer}></View>
+      <View style={styles.detailsContainer}>
+        <View style={styles.shopNameContainer}>
+          <Text style={styles.shopNameText}>{ShopName}</Text>
+        </View>
+      </View>
     </View>
   );
 };
@@ -29,8 +33,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     width: width * 0.96,
     height: 350,
-    borderRadius: 10,
     borderColor: "#ced4da",
+    backgroundColor: "#fff0f3",
   },
   imageContainer: {
     marginTop: 5,
@@ -44,10 +48,16 @@ const styles = StyleSheet.create({
   detailsContainer: {
     width: width * 0.9,
     height: 130,
-    borderColor: "grey",
-    borderRadius: 10,
     marginBottom: 5,
-    flexDirection: "row",
-    borderWidth: 1,
+    backgroundColor: "green",
+  },
+  shopNameContainer: {
+    backgroundColor: "red",
+    height: 40,
+  },
+  shopNameText: {
+    fontSize: 20,
+    fontFamily: "serif",
+    fontWeight: "bold",
   },
 });
