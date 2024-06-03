@@ -5,10 +5,26 @@ import Shop1Image from "./Shop1Image.jpeg";
 const BarberShops = () => {
   return (
     <View style={styles.container}>
-      <CardTile image={Shop1Image} ShopName={"The Hair Haven"} />
-      <CardTile image={Shop1Image} ShopName={"The Hair Haven"} />
-      <CardTile image={Shop1Image} ShopName={"The Hair Haven"} />
-      <CardTile image={Shop1Image} ShopName={"The Hair Haven"} />
+      <CardTile
+        image={Shop1Image}
+        ShopName={"The Hair Haven"}
+        RatingInStarts={4.5}
+      />
+      <CardTile
+        image={Shop1Image}
+        ShopName={"The Hair Haven"}
+        RatingInStarts={4.5}
+      />
+      <CardTile
+        image={Shop1Image}
+        ShopName={"The Hair Haven"}
+        RatingInStarts={4.5}
+      />
+      <CardTile
+        image={Shop1Image}
+        ShopName={"The Hair Haven"}
+        RatingInStarts={4.5}
+      />
     </View>
   );
 };
