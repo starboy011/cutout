@@ -11,7 +11,7 @@ import { useFonts, Satisfy_400Regular } from "@expo-google-fonts/satisfy";
 import Rating from "./Rating";
 
 const { width, height } = Dimensions.get("window");
-const CardTile = ({ image, ShopName }) => {
+const CardTile = ({ image, ShopName, RatingInStarts }) => {
   let [fontsLoaded] = useFonts({
     Satisfy_400Regular,
   });
@@ -30,7 +30,7 @@ const CardTile = ({ image, ShopName }) => {
           <Text style={styles.shopNameText}>{ShopName}</Text>
         </View>
         <View style={styles.ratingContainer}>
-          <Rating rating={4.5} />
+          <Rating rating={RatingInStarts} />
         </View>
       </View>
     </View>
