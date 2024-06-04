@@ -10,7 +10,8 @@ const BarberShops = () => {
         ShopName={"The Hair Haven"}
         RatingInStarts={4.5}
         Address={"456 MG Road Bengaluru"}
-        Status={"OPEN"}
+        Status={"CLOSED"}
+        Distance={"1.2 km"}
       />
       <CardTile
         image={Shop1Image}
@@ -18,6 +19,7 @@ const BarberShops = () => {
         RatingInStarts={4.5}
         Address={"456 MG Road Bengaluru"}
         Status={"OPEN"}
+        Distance={"1.2 km"}
       />
       <CardTile
         image={Shop1Image}
@@ -25,6 +27,7 @@ const BarberShops = () => {
         RatingInStarts={4.5}
         Address={"456 MG Road Bengaluru"}
         Status={"OPEN"}
+        Distance={"1.2 km"}
       />
       <CardTile
         image={Shop1Image}
@@ -32,6 +35,7 @@ const BarberShops = () => {
         RatingInStarts={4.5}
         Address={"456 MG Road Bengaluru"}
         Status={"OPEN"}
+        Distance={"1.2 km"}
       />
     </View>
   );
