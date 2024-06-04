@@ -1,19 +1,49 @@
-import React from "react";
-import { StyleSheet, Dimensions, View } from "react-native";
+import React, { useEffect } from "react";
+import { StyleSheet, Dimensions, View, BackHandler, Alert } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import Home from "../Home/Home";
 import Offers from "../Offers/Offers";
 import Search from "../Search/Search";
 import HairStyle from "../HairStyle/HairStyle";
+
 const Tab = createBottomTabNavigator();
 const { width, height } = Dimensions.get("window");
+
 const BottomTab = () => {
+  const navigation = useNavigation();
+
+  useFocusEffect(
+    React.useCallback(() => {
+      const onBackPress = () => {
+        const routes = navigation.getState().routes;
+        const currentRouteName = routes[routes.length - 1].name;
+
+        if (currentRouteName !== "Home") {
+          navigation.navigate("Home");
+          return true;
+        } else {
+          Alert.alert("Exit App", "Are you sure you want to exit?", [
+            { text: "Cancel", style: "cancel", onPress: () => {} },
+            { text: "OK", onPress: () => BackHandler.exitApp() },
+          ]);
+          return true;
+        }
+      };
+
+      BackHandler.addEventListener("hardwareBackPress", onBackPress);
+
+      return () =>
+        BackHandler.removeEventListener("hardwareBackPress", onBackPress);
+    }, [navigation])
+  );
+
   return (
     <View style={styles.container}>
       <Tab.Navigator
         initialRouteName="Home"
-        backBehavior="initinalRoute"
+        backBehavior="none" // We handle back behavior ourselves
         screenOptions={({ route }) => ({
           tabBarActiveTintColor: "#176B87",
           tabBarInactiveTintColor: "black",
