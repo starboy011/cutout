@@ -12,6 +12,7 @@ import { EmilysCandy_400Regular } from "@expo-google-fonts/emilys-candy";
 import Rating from "./Rating";
 import ImageTopBar from "./ImageTopBar";
 import ImageBottomBar from "./ImageBottomBar";
+import MetaMessages from "./MetaMessages";
 
 const { width, height } = Dimensions.get("window");
 const CardTile = ({
@@ -58,6 +59,9 @@ const CardTile = ({
           <View style={styles.shopNameContainer}>
             <Text style={styles.shopAddressText}>{Address}</Text>
           </View>
+          <View style={styles.shopPriceContainer}>
+            <MetaMessages />
+          </View>
         </View>
       </View>
     </View>
@@ -73,7 +77,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     width: width * 0.96,
-    height: 350,
     borderColor: "#ced4da",
     backgroundColor: "#EEF5FF",
   },
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     width: width * 0.9,
-    height: 140,
+    // height: 140,
   },
   detailsTitleContainer: {
     width: width * 0.9,
@@ -98,12 +101,16 @@ const styles = StyleSheet.create({
   },
   detailsContentContainer: {
     width: width * 0.9,
-    flexDirection: "row",
     justifyContent: "space-between",
   },
   shopNameContainer: {
     justifyContent: "center",
-    height: 40,
+    height: 35,
+  },
+  shopPriceContainer: {
+    justifyContent: "center",
+    width: width * 0.9,
+    backgroundColor: "yellow",
   },
   shopNameText: {
     fontSize: 25,
