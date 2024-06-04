@@ -10,6 +10,7 @@ import { Provider as PaperProvider } from "react-native-paper";
 import LoginScreen1 from "./components/Login/LoginScreen1";
 import { Ionicons } from "@expo/vector-icons";
 import BottomTab from "./components/BottomTab/BottomTab";
+import ShopDetailsScreen from "./components/ShopDetailsScreen/ShopDetailsScreen";
 
 const Stack = createStackNavigator();
 
@@ -35,6 +36,10 @@ export default function App() {
               <Stack.Screen name="Login" component={Login} />
               <Stack.Screen name="LoginScreen1" component={LoginScreen1} />
               <Stack.Screen name="BottomTab" component={BottomTab} />
+              <Stack.Screen
+                name="ShopDetailsScreen"
+                component={ShopDetailsScreen}
+              />
             </>
           )}
         </Stack.Navigator>
