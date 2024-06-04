@@ -9,21 +9,29 @@ const BarberShops = () => {
         image={Shop1Image}
         ShopName={"The Hair Haven"}
         RatingInStarts={4.5}
+        Address={"456 MG Road Bengaluru"}
+        Status={"OPEN"}
       />
       <CardTile
         image={Shop1Image}
         ShopName={"The Hair Haven"}
         RatingInStarts={4.5}
+        Address={"456 MG Road Bengaluru"}
+        Status={"OPEN"}
       />
       <CardTile
         image={Shop1Image}
         ShopName={"The Hair Haven"}
         RatingInStarts={4.5}
+        Address={"456 MG Road Bengaluru"}
+        Status={"OPEN"}
       />
       <CardTile
         image={Shop1Image}
         ShopName={"The Hair Haven"}
         RatingInStarts={4.5}
+        Address={"456 MG Road Bengaluru"}
+        Status={"OPEN"}
       />
     </View>
   );

@@ -8,12 +8,16 @@ import {
 } from "react-native";
 import React from "react";
 import { useFonts, Satisfy_400Regular } from "@expo-google-fonts/satisfy";
+import { EmilysCandy_400Regular } from "@expo-google-fonts/emilys-candy";
 import Rating from "./Rating";
+import ImageTopBar from "./ImageTopBar";
+import ImageBottomBar from "./ImageBottomBar";
 
 const { width, height } = Dimensions.get("window");
-const CardTile = ({ image, ShopName, RatingInStarts }) => {
+const CardTile = ({ image, ShopName, RatingInStarts, Address, Status }) => {
   let [fontsLoaded] = useFonts({
     Satisfy_400Regular,
+    EmilysCandy_400Regular,
   });
 
   if (!fontsLoaded) {
@@ -21,16 +25,27 @@ const CardTile = ({ image, ShopName, RatingInStarts }) => {
   }
   return (
     <View style={styles.container}>
-      <ImageBackground
-        source={image}
-        style={styles.imageContainer}
-      ></ImageBackground>
-      <View style={styles.detailsContainer}>
-        <View style={styles.shopNameContainer}>
-          <Text style={styles.shopNameText}>{ShopName}</Text>
+      <ImageBackground source={image} style={styles.imageContainer}>
+        <View style={styles.imageTopBar}>
+          <ImageTopBar Status={Status} />
         </View>
-        <View style={styles.ratingContainer}>
-          <Rating rating={RatingInStarts} />
+        <View style={styles.imageBottomBar}>
+          <ImageBottomBar />
+        </View>
+      </ImageBackground>
+      <View style={styles.detailsContainer}>
+        <View style={styles.detailsTitleContainer}>
+          <View style={styles.shopNameContainer}>
+            <Text style={styles.shopNameText}>{ShopName}</Text>
+          </View>
+          <View style={styles.ratingContainer}>
+            <Rating rating={RatingInStarts} />
+          </View>
+        </View>
+        <View style={styles.detailsContentContainer}>
+          <View style={styles.shopNameContainer}>
+            <Text style={styles.shopAddressText}>{Address}</Text>
+          </View>
         </View>
       </View>
     </View>
@@ -58,10 +73,19 @@ const styles = StyleSheet.create({
     borderTopStartRadius: 5,
     borderTopEndRadius: 5,
     overflow: "hidden",
+    justifyContent: "space-between",
   },
   detailsContainer: {
     width: width * 0.9,
     height: 140,
+  },
+  detailsTitleContainer: {
+    width: width * 0.9,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  detailsContentContainer: {
+    width: width * 0.9,
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -74,10 +98,22 @@ const styles = StyleSheet.create({
     fontFamily: "Satisfy_400Regular",
     marginLeft: 10,
   },
+  shopAddressText: {
+    fontSize: 15,
+    fontFamily: "EmilysCandy_400Regular",
+    marginLeft: 10,
+  },
   ratingContainer: {
     justifyContent: "center",
     alignItems: "center",
     height: 40,
-    // width: 100,
+  },
+  imageTopBar: {
+    width: width * 0.9,
+    height: 50,
+  },
+  imageBottomBar: {
+    width: width * 0.9,
+    height: 50,
   },
 });
