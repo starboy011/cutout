@@ -1,14 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FontAwesome6 } from "@expo/vector-icons";
-const ImageTopBar = ({ Status, Distance }) => {
-  const [backColor, setBackColor] = useState(true);
-  useEffect(() => {
-    if (Status == "CLOSED") {
-      setBackColor(false);
-    }
-  }, [Status]);
-
+const ImageTopBar = ({ Status, Distance, StatusColor }) => {
   return (
     <View style={styles.container}>
       <View style={styles.statusContainer}>
@@ -16,7 +9,7 @@ const ImageTopBar = ({ Status, Distance }) => {
           style={[
             styles.status,
             {
-              backgroundColor: backColor ? "rgba(64, 165, 120, 0.8)" : "tomato",
+              backgroundColor: StatusColor,
             },
           ]}
         >

@@ -21,6 +21,7 @@ const CardTile = ({
   Address,
   Status,
   Distance,
+  StatusColor,
 }) => {
   let [fontsLoaded] = useFonts({
     Satisfy_400Regular,
@@ -34,7 +35,11 @@ const CardTile = ({
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.imageContainer}>
         <View style={styles.imageTopBar}>
-          <ImageTopBar Status={Status} Distance={Distance} />
+          <ImageTopBar
+            Status={Status}
+            Distance={Distance}
+            StatusColor={StatusColor}
+          />
         </View>
         <View style={styles.imageBottomBar}>
           <ImageBottomBar />
