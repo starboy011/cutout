@@ -30,7 +30,7 @@ const BarberShops = () => {
         Address={"456 MG Road Bengaluru"}
         Status={"CLOSED"}
         Distance={"1.2 km"}
-        StatusColor={"rgba(64, 165, 120, 0.8)"}
+        StatusColor={"tomato"}
       />
       <CardTile
         image={Shop1Image}
