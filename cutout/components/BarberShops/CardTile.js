@@ -14,7 +14,14 @@ import ImageTopBar from "./ImageTopBar";
 import ImageBottomBar from "./ImageBottomBar";
 
 const { width, height } = Dimensions.get("window");
-const CardTile = ({ image, ShopName, RatingInStarts, Address, Status }) => {
+const CardTile = ({
+  image,
+  ShopName,
+  RatingInStarts,
+  Address,
+  Status,
+  Distance,
+}) => {
   let [fontsLoaded] = useFonts({
     Satisfy_400Regular,
     EmilysCandy_400Regular,
@@ -27,7 +34,7 @@ const CardTile = ({ image, ShopName, RatingInStarts, Address, Status }) => {
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.imageContainer}>
         <View style={styles.imageTopBar}>
-          <ImageTopBar Status={Status} />
+          <ImageTopBar Status={Status} Distance={Distance} />
         </View>
         <View style={styles.imageBottomBar}>
           <ImageBottomBar />
