@@ -105,7 +105,6 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     width: width * 0.9,
-    // height: 140,
   },
   detailsTitleContainer: {
     width: width * 0.9,
@@ -113,7 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   detailsContentContainer: {
-    width: width * 0.9,
+    width: width * 1,
     justifyContent: "space-between",
   },
   shopNameContainer: {
@@ -122,7 +121,7 @@ const styles = StyleSheet.create({
   },
   shopPriceContainer: {
     justifyContent: "center",
-    width: width * 0.9,
+    width: width * 1,
   },
   shopNameText: {
     fontSize: 25,
