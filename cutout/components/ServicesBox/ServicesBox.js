@@ -25,13 +25,11 @@ const ServicesBox = (props) => {
       style={[styles.container, { transform: [{ translateX: slideAnim }] }]}
     >
       <TouchableOpacity>
-        {/* <View style={styles.circle1}> */}
         <ImageBackground source={image} style={styles.circle}>
           <View style={styles.title}>
             <Text style={styles.titleStyle}>{title}</Text>
           </View>
         </ImageBackground>
-        {/* </View> */}
       </TouchableOpacity>
     </Animated.View>
   );
