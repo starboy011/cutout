@@ -111,6 +111,7 @@ const styles = StyleSheet.create({
     borderTopEndRadius: 20,
     overflow: "hidden",
     justifyContent: "space-between",
+    backgroundColor: "white",
   },
   detailsContainer: {
     width: width * 0.9,
