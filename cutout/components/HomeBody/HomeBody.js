@@ -19,7 +19,7 @@ export default HomeBody;
 
 const styles = StyleSheet.create({
   container: {
-    width: width * 0.97,
+    width: width,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     marginTop: -20,
