@@ -15,6 +15,9 @@ const BarberShops = () => {
         StatusColor={"rgba(64, 165, 120, 0.8)"}
         MetaMessage={"Hurry, only 3 slots left for the day"}
         ActiveOffer={true}
+        HairCutPrice={"150 ₹"}
+        OfferPercentage={"20% OFF"}
+        OfferedHairCutPrice={"120 ₹"}
       />
       <CardTile
         image={Shop1Image}
@@ -26,6 +29,9 @@ const BarberShops = () => {
         StatusColor={"rgba(64, 165, 120, 0.8)"}
         MetaMessage={"Hurry, only 3 slots left for the day"}
         ActiveOffer={true}
+        HairCutPrice={"150 ₹"}
+        OfferPercentage={"20% OFF"}
+        OfferedHairCutPrice={"120 ₹"}
       />
       <CardTile
         image={Shop1Image}
@@ -37,6 +43,9 @@ const BarberShops = () => {
         StatusColor={"tomato"}
         MetaMessage={"Hurry, only 3 slots left for the day"}
         ActiveOffer={false}
+        HairCutPrice={"150 ₹"}
+        OfferPercentage={"20% OFF"}
+        OfferedHairCutPrice={"120 ₹"}
       />
       <CardTile
         image={Shop1Image}
@@ -48,6 +57,9 @@ const BarberShops = () => {
         StatusColor={"rgba(64, 165, 120, 0.8)"}
         MetaMessage={"Hurry, only 3 slots left for the day"}
         ActiveOffer={true}
+        HairCutPrice={"150 ₹"}
+        OfferPercentage={"20%  OFF"}
+        OfferedHairCutPrice={"120 ₹"}
       />
     </View>
   );

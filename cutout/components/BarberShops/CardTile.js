@@ -13,6 +13,7 @@ import Rating from "./Rating";
 import ImageTopBar from "./ImageTopBar";
 import ImageBottomBar from "./ImageBottomBar";
 import MetaMessages from "./MetaMessages";
+import ShopPrice from "./ShopPrice";
 
 const { width, height } = Dimensions.get("window");
 const CardTile = ({
@@ -25,6 +26,9 @@ const CardTile = ({
   StatusColor,
   MetaMessage,
   ActiveOffer,
+  HairCutPrice,
+  OfferPercentage,
+  OfferedHairCutPrice,
 }) => {
   let [fontsLoaded] = useFonts({
     Satisfy_400Regular,
@@ -63,6 +67,11 @@ const CardTile = ({
           </View>
           <View style={styles.shopPriceContainer}>
             <MetaMessages MetaMessage={MetaMessage} />
+            <ShopPrice
+              OfferedHairCutPrice={OfferedHairCutPrice}
+              OfferPercentage={OfferPercentage}
+              HairCutPrice={HairCutPrice}
+            />
           </View>
         </View>
       </View>
