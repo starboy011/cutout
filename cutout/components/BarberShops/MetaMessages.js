@@ -6,7 +6,7 @@ const MetaMessages = ({ MetaMessage }) => {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <MaterialIcons name={"bolt"} size={20} />
+        <MaterialIcons name={"bolt"} size={20} color={"tomato"} />
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.text}>{MetaMessage}</Text>
