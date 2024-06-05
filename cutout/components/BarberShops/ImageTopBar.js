@@ -18,11 +18,7 @@ const ImageTopBar = ({ Status, Distance, StatusColor }) => {
       </View>
       <View style={styles.distanceContainer}>
         <View style={styles.distanceImageContainer}>
-          <FontAwesome6
-            name={"motorcycle"}
-            size={15}
-            color={"rgb(238, 245, 255)"}
-          />
+          <FontAwesome6 name={"motorcycle"} size={15} color={"black"} />
         </View>
         <View style={styles.distanceContentContainer}>
           <Text style={styles.distanceText}>{Distance}</Text>
@@ -60,7 +56,6 @@ const styles = StyleSheet.create({
     fontFamily: "serif",
     fontWeight: "700",
     color: "white",
-    // letterSpacing: 1.5,
   },
   distanceContainer: {
     width: 100,
@@ -74,21 +69,21 @@ const styles = StyleSheet.create({
     height: "50%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(243, 248, 255,0.2)",
+    backgroundColor: "white",
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
   },
   distanceContentContainer: {
     width: "55%",
     height: "50%",
-    backgroundColor: "rgba(243, 248, 255,0.2)",
+    backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
     borderTopEndRadius: 10,
     borderBottomRightRadius: 10,
   },
   distanceText: {
-    color: "white",
+    color: "black",
     fontSize: 15,
     fontWeight: "400",
   },
