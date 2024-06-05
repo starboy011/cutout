@@ -1,20 +1,43 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useFonts, Satisfy_400Regular } from "@expo-google-fonts/satisfy";
+import { ActivityIndicator } from "react-native-paper";
+import { EmilysCandy_400Regular } from "@expo-google-fonts/emilys-candy";
 const DiscountedPrice = ({
   HairCutPrice,
   OfferPercentage,
   OfferedHairCutPrice,
 }) => {
+  let [fontsLoaded] = useFonts({
+    Satisfy_400Regular,
+    EmilysCandy_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return <ActivityIndicator />;
+  }
   return (
     <View style={styles.container}>
-      <View style={styles.discountContainer}>
-        <Text style={styles.strikeThroughPrice}>{HairCutPrice}</Text>
-        <Text style={styles.discountText}>{OfferPercentage}</Text>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <View style={styles.discountContainer}>
+          <Text style={styles.strikeThroughPrice}>{HairCutPrice}</Text>
+          <Text style={styles.discountText}>{OfferPercentage}</Text>
+        </View>
+        <View>
+          <Text style={styles.priceContainer}>{OfferedHairCutPrice}</Text>
+        </View>
       </View>
-      <View>
-        <Text style={styles.priceContainer}>{OfferedHairCutPrice}</Text>
-      </View>
+      <TouchableOpacity>
+        <View style={styles.book}>
+          <Text style={styles.bookText}>PLAN NOW</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -25,7 +48,24 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    height: 50,
+    height: 80,
+    justifyContent: "space-between",
+    width: 350,
+  },
+  book: {
+    backgroundColor: "#ff0000",
+    elevation: 5,
+    width: 100,
+    height: 30,
+    elevation: 5,
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    color: "white",
+  },
+  bookText: {
+    color: "white",
+    fontFamily: "EmilysCandy_400Regular",
   },
   priceContainer: {
     width: 70,
@@ -38,7 +78,6 @@ const styles = StyleSheet.create({
     color: "white",
     elevation: 5,
   },
-
   price: {
     fontSize: 20,
   },
