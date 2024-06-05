@@ -24,6 +24,7 @@ const CardTile = ({
   Distance,
   StatusColor,
   MetaMessage,
+  ActiveOffer,
 }) => {
   let [fontsLoaded] = useFonts({
     Satisfy_400Regular,
@@ -44,7 +45,7 @@ const CardTile = ({
           />
         </View>
         <View style={styles.imageBottomBar}>
-          <ImageBottomBar />
+          <ImageBottomBar ActiveOffer={ActiveOffer} />
         </View>
       </ImageBackground>
       <View style={styles.detailsContainer}>
@@ -78,7 +79,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     borderColor: "#ced4da",
-    borderRadius: 20,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
     backgroundColor: "#EEF5FF",
     shadowColor: "#000",
     shadowOffset: {
