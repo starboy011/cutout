@@ -23,6 +23,7 @@ const CardTile = ({
   Status,
   Distance,
   StatusColor,
+  MetaMessage,
 }) => {
   let [fontsLoaded] = useFonts({
     Satisfy_400Regular,
@@ -60,7 +61,7 @@ const CardTile = ({
             <Text style={styles.shopAddressText}>{Address}</Text>
           </View>
           <View style={styles.shopPriceContainer}>
-            <MetaMessages />
+            <MetaMessages MetaMessage={MetaMessage} />
           </View>
         </View>
       </View>
@@ -110,7 +111,6 @@ const styles = StyleSheet.create({
   shopPriceContainer: {
     justifyContent: "center",
     width: width * 0.9,
-    backgroundColor: "yellow",
   },
   shopNameText: {
     fontSize: 25,

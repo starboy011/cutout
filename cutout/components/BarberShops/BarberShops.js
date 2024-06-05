@@ -13,6 +13,7 @@ const BarberShops = () => {
         Status={"OPEN"}
         Distance={"1.2 km"}
         StatusColor={"rgba(64, 165, 120, 0.8)"}
+        MetaMessage={"Hurry, only 3 slots left for the day"}
       />
       <CardTile
         image={Shop1Image}
@@ -22,6 +23,7 @@ const BarberShops = () => {
         Status={"OPEN"}
         Distance={"1.2 km"}
         StatusColor={"rgba(64, 165, 120, 0.8)"}
+        MetaMessage={"Hurry, only 3 slots left for the day"}
       />
       <CardTile
         image={Shop1Image}
@@ -31,6 +33,7 @@ const BarberShops = () => {
         Status={"CLOSED"}
         Distance={"1.2 km"}
         StatusColor={"tomato"}
+        MetaMessage={"Hurry, only 3 slots left for the day"}
       />
       <CardTile
         image={Shop1Image}
@@ -40,6 +43,7 @@ const BarberShops = () => {
         Status={"OPEN"}
         Distance={"1.2 km"}
         StatusColor={"rgba(64, 165, 120, 0.8)"}
+        MetaMessage={"Hurry, only 3 slots left for the day"}
       />
     </View>
   );
