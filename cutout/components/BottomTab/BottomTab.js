@@ -58,10 +58,8 @@ const BottomTab = () => {
           },
           tabBarStyle: {
             backgroundColor: "#EEF5FF",
-            width: width * 0.96,
-            marginBottom: 5,
+            width: width * 1,
             height: 50,
-            borderRadius: 10,
           },
           tabBarIcon: ({ focused, color }) => {
             let iconName;
