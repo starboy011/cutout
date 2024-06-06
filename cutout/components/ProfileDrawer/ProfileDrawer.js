@@ -23,9 +23,7 @@ const ProfileDrawer = () => {
     <View style={{ backgroundColor: "white" }}>
       <Appbar.Header elevated>
         <Appbar.BackAction onPress={handleLogin} />
-        <Appbar.Content title="Title" />
-        <Appbar.Action icon="calendar" onPress={() => {}} />
-        <Appbar.Action icon="magnify" onPress={() => {}} />
+        <Appbar.Content title="Profile" />
       </Appbar.Header>
       <SafeAreaView style={{ backgroundColor: "white" }}>
         <Animated.View
