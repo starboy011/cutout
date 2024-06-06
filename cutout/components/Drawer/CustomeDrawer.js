@@ -22,12 +22,11 @@ const CustomeDrawer = () => {
     <View style={{ backgroundColor: "white" }}>
       <Appbar.Header elevated>
         <Appbar.BackAction onPress={handleLogin} />
-        <Appbar.Content title="Title" />
-        <Appbar.Action icon="calendar" onPress={() => {}} />
-        <Appbar.Action icon="magnify" onPress={() => {}} />
+        <Appbar.Content title="Menu" />
+        {/* <Appbar.Action icon="magnify" onPress={() => {}} /> */}
       </Appbar.Header>
       <Animated.View style={{ transform: [{ translateX: slideAnim }] }}>
-        <Drawer.Section title="Menu" style={styles.container}>
+        <View style={styles.container}>
           <Drawer.Item
             label="First Item"
             active={active === "first"}
@@ -38,7 +37,7 @@ const CustomeDrawer = () => {
             active={active === "second"}
             onPress={() => setActive("second")}
           />
-        </Drawer.Section>
+        </View>
       </Animated.View>
     </View>
   );

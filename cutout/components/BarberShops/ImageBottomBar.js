@@ -1,13 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
+import React from "react";
 import { FontAwesome6, MaterialIcons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
-const ImageBottomBar = ({ ActiveOffer }) => {
+
+const ImageBottomBar = ({ ActiveOffer, ShopName }) => {
   const navigation = useNavigation();
-  const handleLogin = () => {
-    navigation.navigate("ShopDetailsScreen");
+
+  const handleLogin = (shopName) => {
+    navigation.navigate("ShopDetailsScreen", { ShopName: shopName });
   };
+
   return (
     <View style={styles.container}>
       <View style={styles.statusContainer}>
@@ -15,7 +18,7 @@ const ImageBottomBar = ({ ActiveOffer }) => {
           <MaterialIcons name={"local-offer"} size={15} color={"tomato"} />
         ) : null}
       </View>
-      <TouchableOpacity onPress={handleLogin}>
+      <TouchableOpacity onPress={() => handleLogin(ShopName)}>
         <View style={styles.detailsContainer}>
           <FontAwesome6
             name={"arrow-right"}

@@ -49,7 +49,7 @@ const CardTile = ({
           />
         </View>
         <View style={styles.imageBottomBar}>
-          <ImageBottomBar ActiveOffer={ActiveOffer} />
+          <ImageBottomBar ActiveOffer={ActiveOffer} ShopName={ShopName} />
         </View>
       </ImageBackground>
       <View style={styles.detailsContainer}>
