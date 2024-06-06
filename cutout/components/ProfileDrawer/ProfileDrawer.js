@@ -21,7 +21,7 @@ const ProfileDrawer = () => {
   }, [slideAnim]);
   return (
     <View style={{ backgroundColor: "white" }}>
-      <Appbar.Header>
+      <Appbar.Header elevated>
         <Appbar.BackAction onPress={handleLogin} />
         <Appbar.Content title="Title" />
         <Appbar.Action icon="calendar" onPress={() => {}} />
