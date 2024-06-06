@@ -2,29 +2,24 @@ import { StyleSheet, View, Dimensions } from "react-native";
 import React, { useState } from "react";
 import { Avatar, Portal } from "react-native-paper";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import CustomeDrawer from "../Drawer/CustomeDrawer";
-import ProfileDrawer from "../ProfileDrawer/ProfileDrawer";
+import { useNavigation } from "@react-navigation/native";
 const { width, height } = Dimensions.get("window");
 const Profile = () => {
   const [active, setActive] = useState(false);
-
+  const navigation = useNavigation();
+  const handleLogin = () => {
+    navigation.navigate("ProfileDrawer");
+  };
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => setActive(!active)}>
+      <TouchableOpacity onPress={handleLogin}>
         <Avatar.Icon
           size={50}
           color="white"
           style={{ backgroundColor: "transparent" }}
-          icon={active ? "account-off" : "account"}
+          icon={"account"}
         />
       </TouchableOpacity>
-      {active && (
-        <Portal>
-          <View style={styles.overlay}>
-            <ProfileDrawer />
-          </View>
-        </Portal>
-      )}
     </View>
   );
 };
