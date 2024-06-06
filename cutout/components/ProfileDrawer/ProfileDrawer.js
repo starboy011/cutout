@@ -1,11 +1,16 @@
 import { StyleSheet, Text, View, Dimensions, Animated } from "react-native";
 import React, { useState, useEffect, useRef } from "react";
-import { Drawer } from "react-native-paper";
+import { Appbar } from "react-native-paper";
 import ProfileDrawerMenu from "../ProfileDrawerMenu/ProfileDrawerMenu";
+import { useNavigation } from "@react-navigation/native";
+import { SafeAreaView } from "react-native-safe-area-context";
 const { width, height } = Dimensions.get("window");
 const ProfileDrawer = () => {
-  const [active, setActive] = useState("");
   const slideAnim = useRef(new Animated.Value(300)).current;
+  const navigation = useNavigation();
+  const handleLogin = () => {
+    navigation.navigate("Home");
+  };
   useEffect(() => {
     Animated.spring(slideAnim, {
       toValue: 0,
@@ -15,16 +20,26 @@ const ProfileDrawer = () => {
     }).start();
   }, [slideAnim]);
   return (
-    <Animated.View
-      style={[styles.container, { transform: [{ translateX: slideAnim }] }]}
-    >
-      <View style={styles.profilePhotoContainer}>
-        <View style={styles.profilePhoto}></View>
-      </View>
-      <View style={styles.ProfileDrawerMenuContainer}>
-        <ProfileDrawerMenu />
-      </View>
-    </Animated.View>
+    <View style={{ backgroundColor: "white" }}>
+      <Appbar.Header>
+        <Appbar.BackAction onPress={handleLogin} />
+        <Appbar.Content title="Title" />
+        <Appbar.Action icon="calendar" onPress={() => {}} />
+        <Appbar.Action icon="magnify" onPress={() => {}} />
+      </Appbar.Header>
+      <SafeAreaView style={{ backgroundColor: "white" }}>
+        <Animated.View
+          style={[styles.container, { transform: [{ translateX: slideAnim }] }]}
+        >
+          <View style={styles.profilePhotoContainer}>
+            <View style={styles.profilePhoto}></View>
+          </View>
+          <View style={styles.ProfileDrawerMenuContainer}>
+            <ProfileDrawerMenu />
+          </View>
+        </Animated.View>
+      </SafeAreaView>
+    </View>
   );
 };
 
@@ -32,15 +47,12 @@ export default ProfileDrawer;
 
 const styles = StyleSheet.create({
   container: {
-    width: "75%",
-    height: height * 0.8,
+    width: "100%",
+    height: height,
     backgroundColor: "white",
-    borderRadius: 10,
-    marginLeft: "24%",
   },
   profilePhotoContainer: {
     width: "100%",
-    height: 150,
     alignItems: "center",
     justifyContent: "center",
   },

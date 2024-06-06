@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 import React, { useState, useEffect } from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -10,7 +10,9 @@ import { Provider as PaperProvider } from "react-native-paper";
 import LoginScreen1 from "./components/Login/LoginScreen1";
 import { Ionicons } from "@expo/vector-icons";
 import BottomTab from "./components/BottomTab/BottomTab";
+import ProfileDrawer from "./components/ProfileDrawer/ProfileDrawer";
 import ShopDetailsScreen from "./components/ShopDetailsScreen/ShopDetailsScreen";
+import CustomeDrawer from "./components/Drawer/CustomeDrawer";
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -39,6 +41,8 @@ export default function App() {
                 name="ShopDetailsScreen"
                 component={ShopDetailsScreen}
               />
+              <Stack.Screen name="CustomeDrawer" component={CustomeDrawer} />
+              <Stack.Screen name="ProfileDrawer" component={ProfileDrawer} />
             </>
           )}
         </Stack.Navigator>
