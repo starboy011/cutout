@@ -9,13 +9,16 @@ import {
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import image from "../ShopDetailsScreen/image.png";
+import ImageTopBar from "./ImageTopBar";
 const { width, height } = Dimensions.get("window");
 const ShopDetailsScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageBackground source={image} style={styles.image}>
-          <SafeAreaView></SafeAreaView>
+          <SafeAreaView>
+            <ImageTopBar />
+          </SafeAreaView>
         </ImageBackground>
       </View>
     </ScrollView>
