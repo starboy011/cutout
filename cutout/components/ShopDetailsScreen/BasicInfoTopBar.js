@@ -34,7 +34,7 @@ export default BasicInfoTopBar;
 
 const styles = StyleSheet.create({
   basicInfoTopBar: {
-    height: "20%",
+    height: 40,
     flexDirection: "row",
   },
   shopName: {
