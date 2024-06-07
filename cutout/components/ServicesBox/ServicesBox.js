@@ -52,13 +52,6 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     elevation: 8,
   },
-  circle1: {
-    width: 82,
-    height: 82,
-    overflow: "hidden",
-    borderRadius: 50,
-    backgroundColor: "rgba(52, 58, 64, .3)",
-  },
   title: {
     width: "100%",
     height: 20,
