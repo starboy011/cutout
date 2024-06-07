@@ -11,7 +11,11 @@ const ShopDetailsScreen = () => {
         <BackgroundImage />
         <BookSlotNow />
         <View style={styles.basicInfoContainer}>
-          <BasicInfo ShopName={"The Hair Heven"} Rating={"4.5/5"} />
+          <BasicInfo
+            ShopName={"The Hair Heven"}
+            Rating={"4.5/5"}
+            Address={"456 MG Road Bengaluru"}
+          />
         </View>
       </ScrollView>
     </View>
