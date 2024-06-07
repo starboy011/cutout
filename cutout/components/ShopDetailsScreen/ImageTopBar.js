@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { FontAwesome6 } from "@expo/vector-icons";
+import { FontAwesome6, MaterialIcons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
@@ -13,6 +13,11 @@ const ImageTopBar = () => {
           <FontAwesome6 name={"arrow-left"} size={30} color={"white"} />
         </TouchableOpacity>
       </View>
+      <View style={styles.iconContainer}>
+        <TouchableOpacity>
+          <MaterialIcons name={"directions"} size={30} color={"white"} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -23,6 +28,8 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: 50,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   iconContainer: {
     width: 70,
