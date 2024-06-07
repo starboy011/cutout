@@ -10,21 +10,29 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import image from "../ShopDetailsScreen/image.png";
 import ImageTopBar from "./ImageTopBar";
-import BackgroundImage from "./BackgroundImage";
 const { width, height } = Dimensions.get("window");
-const ShopDetailsScreen = () => {
+const BackgroundImage = () => {
   return (
-    <ScrollView style={styles.container}>
-      <BackgroundImage />
-    </ScrollView>
+    <View style={styles.imageContainer}>
+      <ImageBackground source={image} style={styles.image}>
+        <SafeAreaView>
+          <ImageTopBar />
+        </SafeAreaView>
+      </ImageBackground>
+    </View>
   );
 };
 
-export default ShopDetailsScreen;
+export default BackgroundImage;
 
 const styles = StyleSheet.create({
-  container: {
+  imageContainer: {
+    height: 500,
+    justifyContent: "space-between",
+    backgroundColor: "white",
+  },
+  image: {
     width: width,
-    height: height,
+    height: "100%",
   },
 });
