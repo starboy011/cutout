@@ -3,6 +3,7 @@ import React from "react";
 import BackgroundImage from "./BackgroundImage";
 import BookSlotNow from "./BookSlotNow";
 import BasicInfo from "./BasicInfo";
+import ServicesOffered from "./ServicesOffered";
 const { width, height } = Dimensions.get("window");
 const ShopDetailsScreen = () => {
   return (
@@ -17,6 +18,9 @@ const ShopDetailsScreen = () => {
             Address={"456 MG Road Bengaluru"}
           />
         </View>
+        <View style={styles.servicesOfferedContainer}>
+          <ServicesOffered />
+        </View>
       </ScrollView>
     </View>
   );
@@ -30,6 +34,10 @@ const styles = StyleSheet.create({
     height: height,
   },
   basicInfoContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  servicesOfferedContainer: {
     justifyContent: "center",
     alignItems: "center",
   },
