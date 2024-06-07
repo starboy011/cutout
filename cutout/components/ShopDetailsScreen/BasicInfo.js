@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#edf2fb",
     width: width * 0.97,
-    height: 200,
+    height: 70,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
