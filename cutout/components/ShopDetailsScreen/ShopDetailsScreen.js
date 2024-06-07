@@ -1,21 +1,13 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  ImageBackground,
-  Dimensions,
-} from "react-native";
+import { StyleSheet, ScrollView, Dimensions } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import image from "../ShopDetailsScreen/image.png";
-import ImageTopBar from "./ImageTopBar";
 import BackgroundImage from "./BackgroundImage";
+import BookSlotNow from "./BookSlotNow";
 const { width, height } = Dimensions.get("window");
 const ShopDetailsScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <BackgroundImage />
+      <BookSlotNow />
     </ScrollView>
   );
 };
