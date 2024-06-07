@@ -1,8 +1,17 @@
 import { StyleSheet, Text, View, Dimensions } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
+import { useFonts, Satisfy_400Regular } from "@expo-google-fonts/satisfy";
+import { ActivityIndicator } from "react-native-paper";
 const { width, height } = Dimensions.get("window");
 const BasicInfo = ({ ShopName, Rating }) => {
+  let [fontsLoaded] = useFonts({
+    Satisfy_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return <ActivityIndicator />;
+  }
   return (
     <View style={styles.container}>
       <View style={styles.basicInfoTopBar}>
@@ -10,11 +19,11 @@ const BasicInfo = ({ ShopName, Rating }) => {
           <Text style={styles.shopNameText}>{ShopName}</Text>
         </View>
         <View style={styles.rating}>
+          <View style={styles.ratingText}>
+            <Text style={styles.ratingTextStyle}>{Rating}</Text>
+          </View>
           <View style={styles.ratingIcon}>
             <Ionicons name={"star-half-sharp"} size={25} />
-          </View>
-          <View style={styles.ratingText}>
-            <Text>{Rating}</Text>
           </View>
         </View>
       </View>
@@ -44,7 +53,7 @@ const styles = StyleSheet.create({
   shopNameText: {
     fontSize: 23,
     marginLeft: 10,
-    fontFamily: "serif",
+    fontFamily: "Satisfy_400Regular",
     fontWeight: "700",
   },
   rating: {
@@ -61,7 +70,13 @@ const styles = StyleSheet.create({
   ratingText: {
     width: "50%",
     height: "100%",
-    justifyContent: "center",
+    justifyContent: "flex-end",
+    flexDirection: "row",
     alignItems: "center",
+  },
+  ratingTextStyle: {
+    marginTop: 6,
+    fontFamily: "Satisfy_400Regular",
+    fontSize: 20,
   },
 });
