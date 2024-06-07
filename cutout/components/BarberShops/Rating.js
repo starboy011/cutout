@@ -78,7 +78,6 @@ export default Rating;
 const styles = StyleSheet.create({
   RatingTextStyle: {
     fontSize: 12,
-    // fontWeight: "bold",
     fontFamily: "Satisfy_400Regular",
   },
 });
