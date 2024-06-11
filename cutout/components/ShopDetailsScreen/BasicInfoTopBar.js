@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     fontSize: 23,
     marginLeft: 10,
     fontFamily: "Satisfy_400Regular",
-    fontWeight: "700",
   },
   rating: {
     height: "100%",

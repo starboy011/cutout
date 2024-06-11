@@ -6,6 +6,7 @@ import BasicInfo from "./BasicInfo";
 import ServicesOffered from "./ServicesOffered";
 const { width, height } = Dimensions.get("window");
 const ShopDetailsScreen = () => {
+  const Services = ["Haircut", "Shave", "Trim", "Hair Color", "Beard"];
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -19,7 +20,7 @@ const ShopDetailsScreen = () => {
           />
         </View>
         <View style={styles.servicesOfferedContainer}>
-          <ServicesOffered />
+          <ServicesOffered Services={Services} />
         </View>
       </ScrollView>
     </View>
@@ -39,6 +40,5 @@ const styles = StyleSheet.create({
   },
   servicesOfferedContainer: {
     justifyContent: "center",
-    alignItems: "center",
   },
 });
