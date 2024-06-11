@@ -35,10 +35,12 @@ const styles = StyleSheet.create({
     height: height,
   },
   basicInfoContainer: {
+    backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
   },
   servicesOfferedContainer: {
     justifyContent: "center",
+    backgroundColor: "white",
   },
 });
