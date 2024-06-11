@@ -67,6 +67,6 @@ const styles = StyleSheet.create({
   ServicesOfferedText: {
     fontFamily: "Satisfy_400Regular",
     fontSize: 23,
-    marginLeft: 10,
+    marginLeft: 15,
   },
 });
