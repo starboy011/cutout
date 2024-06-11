@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#edf2fb",
     width: width * 0.97,
     height: 70,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    borderRadius: 10,
   },
 });

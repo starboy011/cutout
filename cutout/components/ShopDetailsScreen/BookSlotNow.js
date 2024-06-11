@@ -23,14 +23,14 @@ export default BookSlotNow;
 const styles = StyleSheet.create({
   conatainer: {
     width: width,
-    height: 60,
+    height: 25,
     flexDirection: "row",
     justifyContent: "flex-end",
     backgroundColor: "white",
   },
   bookNowContainer: {
-    width: "50%",
-
+    width: "40%",
+    height: 50,
     justifyContent: "center",
     alignItems: "center",
   },
