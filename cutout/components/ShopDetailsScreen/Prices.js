@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     width: "95%",
     backgroundColor: "#edf2fb",
     height: 250,
-    borderRadius: 10,
+    // borderRadius: 10,
     elevation: 5,
   },
   title: {
@@ -58,8 +58,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottomColor: "grey",
-    borderBottomWidth: 0.5,
     width: "95%",
   },
   servicesText: {
