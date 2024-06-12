@@ -6,6 +6,7 @@ import BasicInfo from "./BasicInfo";
 import ServicesOffered from "./ServicesOffered";
 import Prices from "./Prices";
 import BusinessTimes from "./BusinessTimes";
+import ShopImages from "./ShopImages";
 const { width, height } = Dimensions.get("window");
 const ShopDetailsScreen = () => {
   const Services = ["Haircut", "Shave", "Trim", "Hair Color", "Beard"];
@@ -21,6 +22,9 @@ const ShopDetailsScreen = () => {
             Rating={"4.5/5"}
             Address={"456 MG Road Bengaluru"}
           />
+        </View>
+        <View style={styles.imagesContainer}>
+          <ShopImages />
         </View>
         <View style={styles.servicesOfferedContainer}>
           <ServicesOffered Services={Services} />
@@ -61,5 +65,13 @@ const styles = StyleSheet.create({
   businessTimeContainer: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  imagesContainer: {
+    width: "100%",
+    height: 200,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 10,
+    marginBottom: 10,
   },
 });
