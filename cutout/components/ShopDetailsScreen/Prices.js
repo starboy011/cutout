@@ -17,7 +17,7 @@ const Prices = ({ ServicesPrices, Services }) => {
       </View>
       <View style={styles.contentContainer}>
         {Services.map((service, index) => (
-          <View style={styles.content}>
+          <View key={index} style={styles.content}>
             <View>
               <Text style={styles.servicesText}>{service}</Text>
             </View>
