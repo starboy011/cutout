@@ -5,6 +5,7 @@ import BookSlotNow from "./BookSlotNow";
 import BasicInfo from "./BasicInfo";
 import ServicesOffered from "./ServicesOffered";
 import Prices from "./Prices";
+import BusinessTimes from "./BusinessTimes";
 const { width, height } = Dimensions.get("window");
 const ShopDetailsScreen = () => {
   const Services = ["Haircut", "Shave", "Trim", "Hair Color", "Beard"];
@@ -27,6 +28,10 @@ const ShopDetailsScreen = () => {
         <View style={styles.timingsContainer}>
           <Prices Services={Services} ServicesPrices={ServicesPrices} />
         </View>
+        <View style={styles.businessTimeContainer}>
+          <BusinessTimes />
+        </View>
+        <View style={{ height: 100 }}></View>
       </ScrollView>
     </View>
   );
@@ -50,6 +55,10 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   timingsContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  businessTimeContainer: {
     justifyContent: "center",
     alignItems: "center",
   },
