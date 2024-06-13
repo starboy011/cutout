@@ -13,7 +13,11 @@ import image3 from "/Users/starboy/Repos/cutout/cutout/components/ShopDetailsScr
 const { width, height } = Dimensions.get("window");
 const ShopImages = () => {
   return (
-    <ScrollView style={styles.container} horizontal>
+    <ScrollView
+      style={styles.container}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+    >
       <ImageBackground source={image1} style={styles.image}></ImageBackground>
       <ImageBackground source={image2} style={styles.image}></ImageBackground>
       <ImageBackground source={image3} style={styles.image}></ImageBackground>

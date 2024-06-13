@@ -7,6 +7,7 @@ import ServicesOffered from "./ServicesOffered";
 import Prices from "./Prices";
 import BusinessTimes from "./BusinessTimes";
 import ShopImages from "./ShopImages";
+import BookNowButton from "./BookNowButton";
 const { width, height } = Dimensions.get("window");
 const ShopDetailsScreen = () => {
   const Services = ["Haircut", "Shave", "Trim", "Hair Color", "Beard"];
@@ -35,6 +36,9 @@ const ShopDetailsScreen = () => {
         <View style={styles.businessTimeContainer}>
           <BusinessTimes />
         </View>
+        <View style={styles.buttonContainer}>
+          <BookNowButton />
+        </View>
       </ScrollView>
     </View>
   );
@@ -60,10 +64,12 @@ const styles = StyleSheet.create({
   timingsContainer: {
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 20,
   },
   businessTimeContainer: {
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 20,
   },
   imagesContainer: {
     width: "100%",
@@ -72,5 +78,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
     marginBottom: 10,
+  },
+  buttonContainer: {
+    height: 100,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
