@@ -13,7 +13,7 @@ const ShopDetailsScreen = () => {
   const ServicesPrices = ["120 Rs", "100 Rs", "80 Rs", "200 Rs", "50 Rs"];
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <BackgroundImage />
         <BookSlotNow />
         <View style={styles.basicInfoContainer}>
@@ -35,7 +35,6 @@ const ShopDetailsScreen = () => {
         <View style={styles.businessTimeContainer}>
           <BusinessTimes />
         </View>
-        <View style={{ height: 100 }}></View>
       </ScrollView>
     </View>
   );

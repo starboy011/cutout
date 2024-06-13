@@ -35,7 +35,7 @@ export default ServicesOffered;
 const styles = StyleSheet.create({
   circleContainer: {
     width: 100,
-    height: 100,
+    height: 110,
     justifyContent: "center",
     alignItems: "center",
     overflow: "hidden",
