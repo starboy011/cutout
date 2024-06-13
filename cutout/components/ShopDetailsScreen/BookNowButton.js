@@ -2,9 +2,14 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Button } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 const BookNowButton = () => {
+  const navigation = useNavigation();
+  const handleLogin = () => {
+    navigation.navigate("BookingScreen");
+  };
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={handleLogin}>
       <Button
         icon="book"
         mode="contained"
