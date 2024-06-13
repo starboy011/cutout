@@ -4,11 +4,16 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useFonts, Satisfy_400Regular } from "@expo-google-fonts/satisfy";
 import { ActivityIndicator } from "react-native-paper";
 import { EmilysCandy_400Regular } from "@expo-google-fonts/emilys-candy";
+import { useNavigation } from "@react-navigation/native";
 const DiscountedPrice = ({
   HairCutPrice,
   OfferPercentage,
   OfferedHairCutPrice,
 }) => {
+  const navigation = useNavigation();
+  const handleLogin = () => {
+    navigation.navigate("BookingScreen");
+  };
   let [fontsLoaded] = useFonts({
     Satisfy_400Regular,
     EmilysCandy_400Regular,
@@ -33,7 +38,7 @@ const DiscountedPrice = ({
           <Text style={styles.priceContainer}>{OfferedHairCutPrice}</Text>
         </View>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleLogin}>
         <View style={styles.book}>
           <Text style={styles.bookText}>PLAN NOW</Text>
         </View>

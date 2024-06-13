@@ -13,6 +13,7 @@ import BottomTab from "./components/BottomTab/BottomTab";
 import ProfileDrawer from "./components/ProfileDrawer/ProfileDrawer";
 import ShopDetailsScreen from "./components/ShopDetailsScreen/ShopDetailsScreen";
 import CustomeDrawer from "./components/Drawer/CustomeDrawer";
+import BookingScreen from "./components/BookingScreen/BookingScreen";
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
               />
               <Stack.Screen name="CustomeDrawer" component={CustomeDrawer} />
               <Stack.Screen name="ProfileDrawer" component={ProfileDrawer} />
+              <Stack.Screen name="BookingScreen" component={BookingScreen} />
             </>
           )}
         </Stack.Navigator>
