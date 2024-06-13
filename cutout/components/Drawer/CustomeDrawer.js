@@ -20,10 +20,9 @@ const CustomeDrawer = () => {
   }, [slideAnim]);
   return (
     <View style={{ backgroundColor: "white" }}>
-      <Appbar.Header elevated>
+      <Appbar.Header style={{ backgroundColor: "#B4D4FF" }}>
         <Appbar.BackAction onPress={handleLogin} />
         <Appbar.Content title="Menu" />
-        {/* <Appbar.Action icon="magnify" onPress={() => {}} /> */}
       </Appbar.Header>
       <Animated.View style={{ transform: [{ translateX: slideAnim }] }}>
         <View style={styles.container}>
