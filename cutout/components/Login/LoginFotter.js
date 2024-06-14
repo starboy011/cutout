@@ -7,7 +7,6 @@ const LoginFotter = () => {
       <Button
         icon="google"
         mode="contained"
-        onPress={() => console.log("Pressed")}
         textColor="black"
         style={{
           width: "90%",
@@ -24,7 +23,6 @@ const LoginFotter = () => {
       <Button
         icon="account-plus"
         mode="contained"
-        onPress={() => console.log("Pressed")}
         textColor="black"
         style={{
           width: "90%",
