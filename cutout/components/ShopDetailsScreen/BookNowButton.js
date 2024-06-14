@@ -10,12 +10,7 @@ const BookNowButton = () => {
   };
   return (
     <TouchableOpacity onPress={handleLogin}>
-      <Button
-        icon="book"
-        mode="contained"
-        onPress={() => console.log("Pressed")}
-        style={styles.button}
-      >
+      <Button icon="book" mode="contained" style={styles.button}>
         BOOK NOW
       </Button>
     </TouchableOpacity>
